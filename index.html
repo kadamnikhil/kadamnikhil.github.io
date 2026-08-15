@@ -1,14 +1,2820 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikhil Kadam</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nikhil Kadam | Senior Flutter Developer</title>
+
+<meta name="description"
+      content="Nikhil Kadam — Senior Flutter Developer with 5+ years of experience building production Flutter applications, Laravel backends and scalable digital products.">
+
+<meta name="keywords"
+      content="Nikhil Kadam, Flutter Developer, Senior Flutter Developer, Dart, Laravel, Firebase, Bloc, GetX, AWS, Mumbai">
+
+<meta name="author" content="Nikhil Kadam">
+
+<meta property="og:title" content="Nikhil Kadam | Senior Flutter Developer">
+<meta property="og:description"
+      content="Senior Flutter Developer building scalable mobile applications and production-ready digital solutions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kadamnikhil.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+:root {
+    --bg: #07090d;
+    --bg-soft: #0c1017;
+    --card: rgba(17, 22, 31, .72);
+    --border: rgba(255,255,255,.09);
+
+    --text: #f5f7fb;
+    --muted: #9ca6b5;
+
+    --primary: #62d7ff;
+    --primary-2: #7c6cff;
+    --green: #51e6a8;
+
+    --shadow:
+        0 25px 80px rgba(0,0,0,.45);
+
+    --radius: 22px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background:
+        radial-gradient(circle at 15% 5%, rgba(98,215,255,.10), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(124,108,255,.12), transparent 30%),
+        var(--bg);
+
+    color: var(--text);
+    line-height: 1.65;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1180px, calc(100% - 40px));
+    margin: auto;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(18px);
+    background: rgba(7,9,13,.72);
+
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.nav {
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #b8c0cc;
+    font-size: 14px;
+    transition: .25s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-button {
+    padding: 10px 17px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    background: rgba(255,255,255,.04);
+}
+
+.menu {
+    display: none;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 100px;
+
+    position: relative;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 8px 13px;
+
+    border: 1px solid rgba(98,215,255,.2);
+    border-radius: 999px;
+
+    background: rgba(98,215,255,.06);
+
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+
+    box-shadow: 0 0 14px var(--green);
+}
+
+.hero h1 {
+    font-family: "Space Grotesk";
+
+    font-size: clamp(45px, 6vw, 78px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 22px;
+}
+
+.gradient-text {
+    background:
+        linear-gradient(90deg, var(--primary), #ffffff, var(--primary-2));
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 680px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 19px;
+
+    border-radius: 13px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: .25s;
+
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: white;
+    color: #050608;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255,255,255,.15);
+}
+
+.btn-outline {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.035);
+    color: white;
+}
+
+.btn-outline:hover {
+    border-color: rgba(98,215,255,.4);
+    transform: translateY(-3px);
+}
+
+/* ================= HERO VISUAL ================= */
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.device {
+    width: 280px;
+    height: 560px;
+
+    border-radius: 42px;
+
+    background:
+        linear-gradient(145deg, #161d28, #080b10);
+
+    border: 7px solid #202734;
+
+    box-shadow:
+        0 50px 100px rgba(0,0,0,.55),
+        inset 0 0 0 1px rgba(255,255,255,.06);
+
+    padding: 12px;
+
+    position: relative;
+
+    transform: rotate(4deg);
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.device::before {
+    content: "";
+
+    width: 90px;
+    height: 23px;
+
+    background: #050608;
+
+    border-radius: 0 0 16px 16px;
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+}
+
+.device-screen {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 31px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 15%, rgba(98,215,255,.35), transparent 30%),
+        linear-gradient(145deg, #111c2b, #07090d);
+
+    padding: 35px 17px;
+}
+
+.mock-logo {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 17px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 25px;
+
+    background:
+        linear-gradient(135deg, var(--primary), var(--primary-2));
+
+    margin-bottom: 35px;
+}
+
+.mock-title {
+    font-size: 24px;
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.mock-text {
+    font-size: 11px;
+    color: #8893a3;
+}
+
+.mock-card {
+    margin-top: 35px;
+
+    height: 110px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.mock-lines {
+    margin-top: 20px;
+
+    display: grid;
+    gap: 12px;
+}
+
+.mock-lines span {
+    height: 10px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.08);
+}
+
+.mock-lines span:nth-child(1) {
+    width: 80%;
+}
+
+.mock-lines span:nth-child(2) {
+    width: 60%;
+}
+
+.mock-lines span:nth-child(3) {
+    width: 70%;
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: rotate(4deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(4deg) translateY(-18px);
+    }
+}
+
+/* ================= STATS ================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(5,1fr);
+
+    gap: 12px;
+
+    margin-top: 70px;
+}
+
+.stat {
+    padding: 23px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.025);
+
+    text-align: center;
+}
+
+.stat-number {
+    font-family: "Space Grotesk";
+
+    font-size: 28px;
+    font-weight: 700;
+
+    margin-bottom: 3px;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 105px 0;
+}
+
+.section-heading {
+    margin-bottom: 48px;
+}
+
+.eyebrow {
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-family: "Space Grotesk";
+
+    font-size: clamp(32px, 4vw, 47px);
+
+    letter-spacing: -1.5px;
+}
+
+.section-heading p {
+    max-width: 680px;
+
+    color: var(--muted);
+
+    margin-top: 10px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 50px;
+}
+
+.about-card {
+    padding: 30px;
+
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    box-shadow: var(--shadow);
+}
+
+.about-card h3 {
+    font-family: "Space Grotesk";
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.about-highlights {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.highlight {
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid var(--border);
+}
+
+.highlight strong {
+    display: block;
+
+    font-size: 20px;
+
+    color: white;
+}
+
+.highlight span {
+    font-size: 11px;
+
+    color: var(--muted);
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 15px;
+}
+
+.skill-card {
+    padding: 23px;
+
+    border-radius: 18px;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(98,215,255,.25);
+}
+
+.skill-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(98,215,255,.08);
+
+    margin-bottom: 15px;
+
+    color: var(--primary);
+
+    font-weight: 800;
+}
+
+.skill-card h3 {
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.skill-card p {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+/* ================= PROJECT FILTER ================= */
+
+.project-filter {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 9px 15px;
+
+    border-radius: 999px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,.03);
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: white;
+
+    color: #050608;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 18px;
+}
+
+.project {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    transition: .35s;
+
+    cursor: pointer;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(98,215,255,.25);
+
+    box-shadow: var(--shadow);
+}
+
+.project-image {
+    height: 280px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    background:
+        radial-gradient(circle at 50% 20%, rgba(98,215,255,.15), transparent 45%),
+        #0a0e15;
+}
+
+/* PHONE MOCKUPS */
+
+.phone {
+    width: 145px;
+    height: 270px;
+
+    border-radius: 25px;
+
+    border: 5px solid #252c38;
+
+    background: #111822;
+
+    box-shadow: 0 25px 50px rgba(0,0,0,.55);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .45s;
+}
+
+.phone:nth-child(1) {
+    transform: rotate(-8deg) translateX(28px);
+}
+
+.phone:nth-child(2) {
+    transform: translateY(-15px);
+    z-index: 2;
+}
+
+.phone:nth-child(3) {
+    transform: rotate(8deg) translateX(-28px);
+}
+
+.project:hover .phone:nth-child(1) {
+    transform: rotate(-12deg) translateX(10px) translateY(-8px);
+}
+
+.project:hover .phone:nth-child(3) {
+    transform: rotate(12deg) translateX(-10px) translateY(-8px);
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+
+    padding: 22px 10px;
+
+    background:
+        linear-gradient(160deg,
+            rgba(98,215,255,.20),
+            rgba(124,108,255,.08) 40%,
+            #080b10 80%);
+}
+
+.phone-notch {
+    position: absolute;
+
+    width: 45px;
+    height: 10px;
+
+    background: #050608;
+
+    border-radius: 0 0 8px 8px;
+
+    top: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.screen-logo {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(135deg,var(--primary),var(--primary-2));
+
+    margin: 20px auto 18px;
+}
+
+.screen-title {
+    height: 10px;
+
+    width: 65%;
+
+    background: rgba(255,255,255,.9);
+
+    border-radius: 5px;
+
+    margin-bottom: 8px;
+}
+
+.screen-line {
+    height: 6px;
+
+    width: 85%;
+
+    background: rgba(255,255,255,.12);
+
+    border-radius: 4px;
+
+    margin-bottom: 7px;
+}
+
+.screen-box {
+    height: 60px;
+
+    margin-top: 20px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.07);
+
+    border: 1px solid rgba(255,255,255,.06);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 9px;
+}
+
+.project-title {
+    font-family: "Space Grotesk";
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+.project-category {
+    font-size: 10px;
+
+    color: var(--primary);
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.project-description {
+    color: var(--muted);
+
+    font-size: 12.5px;
+
+    margin-bottom: 17px;
+}
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.tag {
+    padding: 6px 9px;
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.05);
+
+    color: #c7ced9;
+
+    border: 1px solid var(--border);
+
+    font-size: 9.5px;
+}
+
+.project-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.project-link {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: white;
+
+    padding: 8px 12px;
+
+    border-radius: 9px;
+
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid var(--border);
+}
+
+.project-link:hover {
+    background: white;
+
+    color: #050608;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.timeline {
+    max-width: 900px;
+
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 7px;
+
+    top: 8px;
+
+    bottom: 8px;
+
+    width: 1px;
+
+    background: var(--border);
+}
+
+.timeline-item {
+    position: relative;
+
+    padding-left: 40px;
+
+    margin-bottom: 45px;
+}
+
+.timeline-dot {
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    left: 0;
+    top: 5px;
+
+    background: var(--primary);
+
+    box-shadow: 0 0 20px rgba(98,215,255,.5);
+}
+
+.timeline-date {
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+.timeline-title {
+    font-family: "Space Grotesk";
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+}
+
+.timeline-company {
+    color: #dce2eb;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+.timeline-item ul {
+    padding-left: 18px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.timeline-item li {
+    margin-bottom: 6px;
+}
+
+/* ================= ACHIEVEMENTS ================= */
+
+.achievement-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 15px;
+}
+
+.achievement {
+    padding: 27px;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    text-align: center;
+}
+
+.achievement strong {
+    display: block;
+
+    font-family: "Space Grotesk";
+
+    font-size: 34px;
+
+    background:
+        linear-gradient(90deg,var(--primary),var(--primary-2));
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.achievement span {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box {
+    padding: 55px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    border: 1px solid var(--border);
+
+    background:
+        radial-gradient(circle at 50% 0%, rgba(98,215,255,.13), transparent 45%),
+        var(--card);
+}
+
+.contact-box h2 {
+    font-family: "Space Grotesk";
+
+    font-size: clamp(30px,4vw,45px);
+
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+    color: var(--muted);
+
+    margin-bottom: 25px;
+}
+
+.contact-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 30px 0;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.footer-content {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.socials {
+    display: flex;
+
+    gap: 15px;
+}
+
+.socials a:hover {
+    color: white;
+}
+
+/* ================= REVEAL ================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 3000;
+
+    background: rgba(0,0,0,.78);
+
+    backdrop-filter: blur(12px);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: min(850px,100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border-radius: 25px;
+
+    background: #0c1118;
+
+    border: 1px solid var(--border);
+
+    padding: 30px;
+
+    position: relative;
+
+    box-shadow: 0 40px 100px rgba(0,0,0,.65);
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,.05);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+.modal-title {
+    font-family: "Space Grotesk";
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+.modal-description {
+    color: var(--muted);
+
+    margin-bottom: 20px;
+}
+
+.modal-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.gallery-image {
+    min-height: 230px;
+
+    border-radius: 17px;
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    background: #101722;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px) {
+
+    .nav-links,
+    .nav-button {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+
+        font-size: 25px;
+
+        cursor: pointer;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin-top: 30px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:550px) {
+
+    .container {
+        width: min(100% - 26px,1180px);
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+
+        letter-spacing: -2px;
+    }
+
+    .device {
+        width: 230px;
+        height: 465px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-box {
+        padding: 35px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .modal-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-    <h1>Hello World 👋</h1>
-    <p>Nikhil Kadam - Senior Flutter Developer</p>
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="container nav">
+
+<a href="#" class="logo">
+Nikhil<span>.</span>
+</a>
+
+<nav class="nav-links">
+
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<a
+class="nav-button"
+href="resume.pdf"
+download>
+Download Resume
+</a>
+
+<div class="menu">
+☰
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div class="reveal">
+
+<div class="badge">
+
+<span class="status-dot"></span>
+
+Available for opportunities
+
+</div>
+
+<h1>
+
+Senior
+
+<span class="gradient-text">
+Flutter Developer
+</span>
+
+</h1>
+
+<p class="hero-description">
+
+I build scalable, production-ready mobile applications
+using Flutter and Dart, backed by Laravel APIs,
+Firebase, cloud infrastructure and real-world integrations.
+
+</p>
+
+<div class="hero-actions">
+
+<a
+href="#projects"
+class="btn btn-primary">
+
+View My Work →
+
+</a>
+
+<a
+href="resume.pdf"
+download
+class="btn btn-outline">
+
+Download Resume
+
+</a>
+
+<a
+href="https://www.linkedin.com/in/kadam-nikhil/"
+target="_blank"
+class="btn btn-outline">
+
+LinkedIn
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-visual reveal">
+
+<div class="device">
+
+<div class="device-screen">
+
+<div class="mock-logo">
+✦
+</div>
+
+<div class="mock-title">
+Flutter
+</div>
+
+<div class="mock-text">
+Building production-ready applications.
+</div>
+
+<div class="mock-card"></div>
+
+<div class="mock-lines">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STATS -->
+
+<div class="stats reveal">
+
+<div class="stat">
+<div class="stat-number">5+</div>
+<div class="stat-label">Years Experience</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">25+</div>
+<div class="stat-label">Flutter Apps</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">30+</div>
+<div class="stat-label">Published Apps</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">250K+</div>
+<div class="stat-label">Users Served</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">8</div>
+<div class="stat-label">Developers Led</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+About Me
+</div>
+
+<h2>
+Building products that solve real problems.
+</h2>
+
+<p>
+Mobile-first development with strong backend and deployment experience.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="about-card reveal">
+
+<h3>
+Flutter First.
+</h3>
+
+<p>
+
+My primary focus is Flutter and Dart.
+I enjoy turning complex business requirements
+into simple, reliable and scalable mobile experiences.
+
+</p>
+
+<div class="about-highlights">
+
+<div class="highlight">
+<strong>25+</strong>
+<span>Mobile Applications</span>
+</div>
+
+<div class="highlight">
+<strong>30+</strong>
+<span>CRM Systems</span>
+</div>
+
+<div class="highlight">
+<strong>250K+</strong>
+<span>Users</span>
+</div>
+
+<div class="highlight">
+<strong>8</strong>
+<span>Developers Led</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="about-card reveal">
+
+<h3>
+End-to-End Engineering
+</h3>
+
+<p>
+
+Beyond Flutter, I work across the complete application stack:
+REST APIs, Laravel backend systems, MySQL databases,
+Firebase services, payment integrations and AWS deployment.
+
+</p>
+
+<br>
+
+<p>
+
+This allows me to understand the complete product lifecycle —
+from requirements and architecture to development,
+deployment and production support.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+Technical Skills
+</div>
+
+<h2>
+Tools I work with.
+</h2>
+
+</div>
+
+
+<div class="skills-grid">
+
+<div class="skill-card reveal">
+
+<div class="skill-icon">
+F
+</div>
+
+<h3>Mobile Development</h3>
+
+<p>
+Flutter, Dart, Android, iOS
+</p>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-icon">
+A
+</div>
+
+<h3>Architecture</h3>
+
+<p>
+Bloc, GetX, MVC, Clean Architecture
+</p>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-icon">
+B
+</div>
+
+<h3>Backend</h3>
+
+<p>
+Laravel, PHP, REST APIs, MySQL
+</p>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-icon">
+F
+</div>
+
+<h3>Firebase</h3>
+
+<p>
+FCM, Authentication, Firestore
+</p>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-icon">
+P
+</div>
+
+<h3>Payments</h3>
+
+<p>
+Razorpay, RazorpayX, PhonePe, ICICI Bank
+</p>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-icon">
+R
+</div>
+
+<h3>Real-time</h3>
+
+<p>
+WebSockets, Maps, Location Services
+</p>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-icon">
+W
+</div>
+
+<h3>Frontend</h3>
+
+<p>
+React.js, JavaScript, HTML5, CSS3
+</p>
+
+</div>
+
+
+<div class="skill-card reveal">
+
+<div class="skill-icon">
+☁
+</div>
+
+<h3>Cloud & Tools</h3>
+
+<p>
+AWS EC2/S3, Git, Postman, Swagger, VS Code
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+Selected Projects
+</div>
+
+<h2>
+Production applications.
+</h2>
+
+<p>
+A selection of mobile products and platforms I've worked on.
+</p>
+
+</div>
+
+
+<div class="project-filter reveal">
+
+<button class="filter-btn active" data-filter="all">
+All
+</button>
+
+<button class="filter-btn" data-filter="fintech">
+FinTech
+</button>
+
+<button class="filter-btn" data-filter="finance">
+Finance
+</button>
+
+<button class="filter-btn" data-filter="delivery">
+Delivery
+</button>
+
+<button class="filter-btn" data-filter="healthcare">
+Healthcare
+</button>
+
+<button class="filter-btn" data-filter="services">
+Services
+</button>
+
+<button class="filter-btn" data-filter="business">
+Business
+</button>
+
+<button class="filter-btn" data-filter="matrimony">
+Matrimony
+</button>
+
+</div>
+
+
+<div class="projects-grid" id="projectGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+Experience
+</div>
+
+<h2>
+Professional journey.
+</h2>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-date">
+Apr 2025 – Present
+</div>
+
+<div class="timeline-title">
+Technical Team Lead
+</div>
+
+<div class="timeline-company">
+Technicul Cloud LLP · Mumbai
+</div>
+
+<ul>
+
+<li>
+Lead a team of <strong>8 developers</strong>.
+</li>
+
+<li>
+Own end-to-end project execution and technical planning.
+</li>
+
+<li>
+Guide Flutter architecture and engineering practices.
+</li>
+
+<li>
+Conduct code reviews and mentor developers.
+</li>
+
+<li>
+Manage AWS deployment and infrastructure.
+</li>
+
+<li>
+Achieved <strong>80% on-time project delivery</strong>.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-date">
+Aug 2021 – Mar 2025
+</div>
+
+<div class="timeline-title">
+Software Engineer — Flutter / Full Stack
+</div>
+
+<div class="timeline-company">
+Technicul Cloud LLP
+</div>
+
+<ul>
+
+<li>
+Built and maintained <strong>25+ production Flutter applications</strong>.
+</li>
+
+<li>
+Published Android and iOS applications.
+</li>
+
+<li>
+Implemented REST APIs, Firebase, payments and real-time features.
+</li>
+
+<li>
+Built <strong>30+ CRM and backend systems</strong> using Laravel.
+</li>
+
+<li>
+Developed responsive websites using React.js and JavaScript.
+</li>
+
+<li>
+Worked on applications serving <strong>250K+ users</strong>.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="eyebrow">
+Impact
+</div>
+
+<h2>
+Numbers that matter.
+</h2>
+
+</div>
+
+
+<div class="achievement-grid">
+
+<div class="achievement reveal">
+
+<strong>25+</strong>
+
+<span>
+Production Flutter Applications
+</span>
+
+</div>
+
+
+<div class="achievement reveal">
+
+<strong>30+</strong>
+
+<span>
+Published Mobile Applications
+</span>
+
+</div>
+
+
+<div class="achievement reveal">
+
+<strong>250K+</strong>
+
+<span>
+Production Users
+</span>
+
+</div>
+
+
+<div class="achievement reveal">
+
+<strong>30+</strong>
+
+<span>
+CRM & Backend Systems
+</span>
+
+</div>
+
+
+<div class="achievement reveal">
+
+<strong>8</strong>
+
+<span>
+Developers Led
+</span>
+
+</div>
+
+
+<div class="achievement reveal">
+
+<strong>80%</strong>
+
+<span>
+On-Time Project Delivery
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box reveal">
+
+<div class="eyebrow">
+Let's Connect
+</div>
+
+<h2>
+Have a project or opportunity?
+</h2>
+
+<p>
+I'm open to discussing Flutter development,
+technical leadership and exciting product opportunities.
+</p>
+
+<div class="contact-actions">
+
+<a
+href="mailto:nikhilkadam.work01@gmail.com"
+class="btn btn-primary">
+
+Email Me
+
+</a>
+
+<a
+href="tel:+919594914849"
+class="btn btn-outline">
+
+Call Me
+
+</a>
+
+<a
+href="https://www.linkedin.com/in/kadam-nikhil/"
+target="_blank"
+class="btn btn-outline">
+
+LinkedIn
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer-content">
+
+<div>
+© 2026 Nikhil Kadam. All rights reserved.
+</div>
+
+<div class="socials">
+
+<a
+href="https://www.linkedin.com/in/kadam-nikhil/"
+target="_blank">
+LinkedIn
+</a>
+
+<a
+href="https://github.com/kadamnikhil"
+target="_blank">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="projectModal">
+
+<div class="modal-box">
+
+<button
+class="modal-close"
+onclick="closeModal()">
+
+×
+
+</button>
+
+<div id="modalContent"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================
+PROJECT DATA
+========================================= */
+
+const projects = [
+
+{
+name: "AabaPay",
+category: "fintech",
+
+type: "FinTech",
+
+description:
+"Digital payment platform enabling credit-card-to-bank transfers with payment processing, settlement workflows and secure transaction management.",
+
+tech:
+["Flutter","Laravel","Razorpay","RazorpayX","KYC APIs","REST APIs"],
+
+caseStudy:
+"https://technicul.com/portfolio/aabapay",
+
+app:
+"https://play.google.com/store/apps/details?id=com.aabapay.aabapay_app",
+
+images: [
+"assets/projects/aabapay/01.png",
+"assets/projects/aabapay/02.png",
+"assets/projects/aabapay/03.png"
+]
+
+},
+
+{
+name: "Girvi",
+category: "finance",
+
+type: "Finance / Gold Loan",
+
+description:
+"Gold-loan and jewellery management platform for jewellers with customer management, loan tracking, dues, transactions and reporting.",
+
+tech:
+["Flutter","Laravel","MySQL","REST APIs"],
+
+caseStudy:
+"https://technicul.com/portfolio/girvi-app",
+
+app:
+"https://play.google.com/store/apps/details?id=com.technicul.girvi",
+
+ios:
+"https://apps.apple.com/in/app/girvi-%E0%A4%97%E0%A4%B0%E0%A4%B5-manage-gold-loan/id6651831215",
+
+images: [
+"assets/projects/girvi/01.png",
+"assets/projects/girvi/02.png",
+"assets/projects/girvi/03.png"
+]
+
+},
+
+{
+name: "Ray's International Pre-School",
+category: "business",
+
+type: "Education / IoT",
+
+description:
+"End-to-end school management ecosystem combining Flutter applications, Laravel CRM, website and RFID-based attendance automation.",
+
+tech:
+["Flutter","Laravel","AWS","RFID","IoT"],
+
+caseStudy:
+"https://technicul.com/portfolio/rays-international-pre-school",
+
+images: [
+"assets/projects/rays/01.png",
+"assets/projects/rays/02.png",
+"assets/projects/rays/03.png"
+]
+
+},
+
+{
+name: "Taxira",
+category: "delivery",
+
+type: "Packing & Moving",
+
+description:
+"Android and iOS platform for packing and moving services with booking, real-time tracking and customizable service packages.",
+
+tech:
+["Flutter","Laravel","AWS","Maps","Real-time Tracking"],
+
+caseStudy:
+"https://technicul.com/portfolio/taxira",
+
+website:
+"https://taxira.in/",
+
+images: [
+"assets/projects/taxira/01.png",
+"assets/projects/taxira/02.png",
+"assets/projects/taxira/03.png"
+]
+
+},
+
+{
+name: "Mera Pharmacy",
+category: "healthcare",
+
+type: "Healthcare",
+
+description:
+"Medicine ordering platform connecting customers with nearby chemists, including prescription upload, cart and order workflows.",
+
+tech:
+["Flutter","Laravel","MySQL","REST APIs"],
+
+caseStudy:
+"https://technicul.com/portfolio/mera-pharmacy",
+
+images: [
+"assets/projects/mera-pharmacy/01.png",
+"assets/projects/mera-pharmacy/02.png",
+"assets/projects/mera-pharmacy/03.png"
+]
+
+},
+
+{
+name: "Servicewala",
+category: "services",
+
+type: "Services Marketplace",
+
+description:
+"Android and iOS service marketplace connecting customers with verified professionals for home and office services.",
+
+tech:
+["Flutter","Laravel","Firebase","REST APIs"],
+
+caseStudy:
+"https://technicul.com/portfolio/servicewala",
+
+images: [
+"assets/projects/servicewala/01.png",
+"assets/projects/servicewala/02.png",
+"assets/projects/servicewala/03.png"
+]
+
+},
+
+{
+name: "Jay Kuber Trading",
+category: "business",
+
+type: "B2B Commerce",
+
+description:
+"Business application for super stockists and distributors with order placement, inventory tracking, ledgers and Tally integration.",
+
+tech:
+["Flutter","Laravel","Tally","REST APIs","MySQL"],
+
+caseStudy:
+"https://technicul.com/portfolio/jaykuber_trading",
+
+images: [
+"assets/projects/jay-kuber/01.png",
+"assets/projects/jay-kuber/02.png",
+"assets/projects/jay-kuber/03.png"
+]
+
+},
+
+{
+name: "Vivaah Sutra",
+category: "matrimony",
+
+type: "Matrimony",
+
+description:
+"Matrimony platform with verified profiles, matchmaking, chat, subscriptions and an administration system.",
+
+tech:
+["Flutter","Laravel","Firebase","AWS"],
+
+caseStudy:
+"https://technicul.com/portfolio/vivaahsutra",
+
+website:
+"https://vivaahsutra.com/",
+
+images: [
+"assets/projects/vivaah-sutra/01.png",
+"assets/projects/vivaah-sutra/02.png",
+"assets/projects/vivaah-sutra/03.png"
+]
+
+}
+
+];
+
+
+/* =========================================
+PROJECT RENDER
+========================================= */
+
+const grid =
+document.getElementById("projectGrid");
+
+
+function renderProjects(filter = "all") {
+
+grid.innerHTML = "";
+
+const filtered =
+filter === "all"
+? projects
+: projects.filter(
+project => project.category === filter
+);
+
+filtered.forEach((project,index) => {
+
+const element =
+document.createElement("article");
+
+element.className =
+"project reveal";
+
+element.onclick =
+() => openModal(project);
+
+
+element.innerHTML = `
+
+<div class="project-image">
+
+<div class="phone">
+
+<div class="phone-notch"></div>
+
+<div class="phone-screen">
+
+<div class="screen-logo"></div>
+
+<div class="screen-title"></div>
+
+<div class="screen-line"></div>
+
+<div class="screen-line"></div>
+
+<div class="screen-box"></div>
+
+</div>
+
+</div>
+
+
+<div class="phone">
+
+<div class="phone-notch"></div>
+
+<div class="phone-screen">
+
+<div class="screen-logo"></div>
+
+<div class="screen-title"></div>
+
+<div class="screen-line"></div>
+
+<div class="screen-line"></div>
+
+<div class="screen-box"></div>
+
+</div>
+
+</div>
+
+
+<div class="phone">
+
+<div class="phone-notch"></div>
+
+<div class="phone-screen">
+
+<div class="screen-logo"></div>
+
+<div class="screen-title"></div>
+
+<div class="screen-line"></div>
+
+<div class="screen-line"></div>
+
+<div class="screen-box"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="project-content">
+
+<div class="project-top">
+
+<div class="project-title">
+${project.name}
+</div>
+
+<div class="project-category">
+${project.type}
+</div>
+
+</div>
+
+<div class="project-description">
+${project.description}
+</div>
+
+<div class="tags">
+
+${project.tech
+.map(tag => `<span class="tag">${tag}</span>`)
+.join("")}
+
+</div>
+
+<div class="project-actions">
+
+<a
+class="project-link"
+href="${project.caseStudy}"
+target="_blank"
+onclick="event.stopPropagation()">
+
+Case Study →
+
+</a>
+
+</div>
+
+</div>
+
+`;
+
+grid.appendChild(element);
+
+});
+
+setTimeout(initReveal,50);
+
+}
+
+
+/* =========================================
+FILTER
+========================================= */
+
+document.querySelectorAll(".filter-btn")
+.forEach(button => {
+
+button.addEventListener("click", () => {
+
+document
+.querySelectorAll(".filter-btn")
+.forEach(btn =>
+btn.classList.remove("active")
+);
+
+button.classList.add("active");
+
+renderProjects(
+button.dataset.filter
+);
+
+});
+
+});
+
+
+/* =========================================
+MODAL
+========================================= */
+
+function openModal(project) {
+
+const modal =
+document.getElementById("projectModal");
+
+const content =
+document.getElementById("modalContent");
+
+
+let links = `
+<a class="project-link"
+href="${project.caseStudy}"
+target="_blank">
+View Case Study →
+</a>
+`;
+
+if(project.app) {
+
+links += `
+<a class="project-link"
+href="${project.app}"
+target="_blank">
+Google Play →
+</a>
+`;
+
+}
+
+if(project.ios) {
+
+links += `
+<a class="project-link"
+href="${project.ios}"
+target="_blank">
+App Store →
+</a>
+`;
+
+}
+
+if(project.website) {
+
+links += `
+<a class="project-link"
+href="${project.website}"
+target="_blank">
+Website →
+</a>
+`;
+
+}
+
+
+content.innerHTML = `
+
+<div class="eyebrow">
+${project.type}
+</div>
+
+<div class="modal-title">
+${project.name}
+</div>
+
+<p class="modal-description">
+${project.description}
+</p>
+
+<div class="tags">
+
+${project.tech
+.map(tag => `<span class="tag">${tag}</span>`)
+.join("")}
+
+</div>
+
+<div class="project-actions">
+${links}
+</div>
+
+<div class="modal-gallery">
+
+${project.images.map((image,index) => `
+
+<div class="gallery-image">
+
+<img
+src="${image}"
+alt="${project.name} mobile application screenshot ${index+1}"
+style="
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+"
+onerror="
+this.style.display='none';
+this.parentElement.innerHTML='<div style=
+'color:#77808f;font-size:12px;text-align:center;padding:30px'>
+Add screenshot:<br>${image}
+</div>';
+">
+
+</div>
+
+`).join("")}
+
+</div>
+
+`;
+
+modal.classList.add("active");
+
+document.body.style.overflow = "hidden";
+
+}
+
+
+function closeModal() {
+
+document
+.getElementById("projectModal")
+.classList.remove("active");
+
+document.body.style.overflow = "";
+
+}
+
+
+document
+.getElementById("projectModal")
+.addEventListener("click", e => {
+
+if(e.target.id === "projectModal") {
+
+closeModal();
+
+}
+
+});
+
+
+document.addEventListener("keydown", e => {
+
+if(e.key === "Escape") {
+
+closeModal();
+
+}
+
+});
+
+
+/* =========================================
+SCROLL REVEAL
+========================================= */
+
+function initReveal() {
+
+const observer =
+new IntersectionObserver(
+entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting) {
+
+entry.target.classList.add("visible");
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+{
+threshold:.08
+}
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(el =>
+observer.observe(el)
+);
+
+}
+
+initReveal();
+
+
+/* =========================================
+INITIAL PROJECTS
+========================================= */
+
+renderProjects();
+
+
+/* =========================================
+MOBILE MENU
+========================================= */
+
+const menu =
+document.querySelector(".menu");
+
+const nav =
+document.querySelector(".nav-links");
+
+menu.addEventListener("click", () => {
+
+nav.style.display =
+nav.style.display === "flex"
+? "none"
+: "flex";
+
+if(nav.style.display === "flex") {
+
+nav.style.position = "absolute";
+
+nav.style.top = "76px";
+
+nav.style.left = "15px";
+
+nav.style.right = "15px";
+
+nav.style.flexDirection = "column";
+
+nav.style.padding = "20px";
+
+nav.style.borderRadius = "15px";
+
+nav.style.background = "#0c1118";
+
+nav.style.border = "1px solid rgba(255,255,255,.08)";
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
