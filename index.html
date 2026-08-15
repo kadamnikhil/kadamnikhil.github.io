@@ -28,6 +28,156 @@
 
 <style>
 
+      /* ================= ABOUT ================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.about-card {
+    padding: 30px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.018)
+        );
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.about-card h3 {
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.about-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.highlight {
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.035);
+    border: 1px solid var(--border);
+}
+
+.highlight strong {
+    display: block;
+    font-family: "Space Grotesk";
+    font-size: 23px;
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.highlight span {
+    display: block;
+    font-size: 10px;
+    line-height: 1.4;
+    color: var(--muted);
+}
+
+
+/* ================= ABOUT TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .about-card {
+        padding: 25px;
+    }
+
+}
+
+
+/* ================= ABOUT MOBILE ================= */
+
+@media (max-width: 550px) {
+
+    #about {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    #about .section-heading {
+        margin-bottom: 25px;
+    }
+
+    #about .section-heading h2 {
+        font-size: 30px;
+        line-height: 1.15;
+        letter-spacing: -1px;
+    }
+
+    #about .section-heading p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-top: 9px;
+    }
+
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .about-card {
+        width: 100%;
+        padding: 21px 18px;
+        border-radius: 18px;
+    }
+
+    .about-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .about-card p {
+        font-size: 12.5px;
+        line-height: 1.7;
+    }
+
+    .about-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 18px;
+    }
+
+    .highlight {
+        padding: 13px 12px;
+        border-radius: 12px;
+    }
+
+    .highlight strong {
+        font-size: 19px;
+    }
+
+    .highlight span {
+        font-size: 9px;
+    }
+
+}
+
 :root {
     --bg: #07090d;
     --bg-soft: #0c1017;
@@ -1541,106 +1691,97 @@ Building production-ready applications.
 </div>
 
 </section>
+ <section id="about">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                About Me
+            </div>
+
+            <h2>
+                Building products that solve real problems.
+            </h2>
+
+            <p>
+                Mobile-first development with strong backend and deployment experience.
+            </p>
+
+        </div>
 
 
-<!-- ================= ABOUT ================= -->
+        <div class="about-grid">
 
-<section id="about">
+            <!-- LEFT CARD -->
+            <div class="about-card reveal">
 
-<div class="container">
+                <h3>
+                    Flutter First.
+                </h3>
 
-<div class="section-heading reveal">
-
-<div class="eyebrow">
-About Me
-</div>
-
-<h2>
-Building products that solve real problems.
-</h2>
-
-<p>
-Mobile-first development with strong backend and deployment experience.
-</p>
-
-</div>
+                <p>
+                    My primary focus is Flutter and Dart.
+                    I enjoy turning complex business requirements
+                    into simple, reliable and scalable mobile experiences.
+                </p>
 
 
-<div class="about-grid">
+                <div class="about-highlights">
 
-<div class="about-card reveal">
+                    <div class="highlight">
+                        <strong>25+</strong>
+                        <span>Mobile Applications</span>
+                    </div>
 
-<h3>
-Flutter First.
-</h3>
+                    <div class="highlight">
+                        <strong>30+</strong>
+                        <span>CRM Systems</span>
+                    </div>
 
-<p>
+                    <div class="highlight">
+                        <strong>250K+</strong>
+                        <span>Users Served</span>
+                    </div>
 
-My primary focus is Flutter and Dart.
-I enjoy turning complex business requirements
-into simple, reliable and scalable mobile experiences.
+                    <div class="highlight">
+                        <strong>8</strong>
+                        <span>Developers Led</span>
+                    </div>
 
-</p>
+                </div>
 
-<div class="about-highlights">
-
-<div class="highlight">
-<strong>25+</strong>
-<span>Mobile Applications</span>
-</div>
-
-<div class="highlight">
-<strong>30+</strong>
-<span>CRM Systems</span>
-</div>
-
-<div class="highlight">
-<strong>250K+</strong>
-<span>Users</span>
-</div>
-
-<div class="highlight">
-<strong>8</strong>
-<span>Developers Led</span>
-</div>
-
-</div>
-
-</div>
+            </div>
 
 
-<div class="about-card reveal">
+            <!-- RIGHT CARD -->
+            <div class="about-card reveal">
 
-<h3>
-End-to-End Engineering
-</h3>
+                <h3>
+                    End-to-End Engineering
+                </h3>
 
-<p>
+                <p>
+                    Beyond Flutter, I work across the complete
+                    application stack — REST APIs, Laravel backend
+                    systems, MySQL databases, Firebase services,
+                    payment integrations and AWS deployment.
+                </p>
 
-Beyond Flutter, I work across the complete application stack:
-REST APIs, Laravel backend systems, MySQL databases,
-Firebase services, payment integrations and AWS deployment.
+                <p style="margin-top:14px;">
+                    This allows me to understand the complete product
+                    lifecycle — from requirements and architecture
+                    to development, deployment and production support.
+                </p>
 
-</p>
+            </div>
 
-<br>
+        </div>
 
-<p>
-
-This allows me to understand the complete product lifecycle —
-from requirements and architecture to development,
-deployment and production support.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
-
 
 <!-- ================= SKILLS ================= -->
 
