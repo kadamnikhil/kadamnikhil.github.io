@@ -36,6 +36,8 @@
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
             --soft-blue: #eff6ff;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1da851;
         }
 
         html {
@@ -280,27 +282,11 @@
             text-transform: uppercase;
         }
 
-        .section-header h2 {
-            margin-top: 7px;
-
-            font-size: 38px;
-
-            letter-spacing: -1.5px;
-        }
-
-        .section-header p {
-            max-width: 450px;
-
-            color: var(--muted);
-
-            font-size: 13px;
-
-            text-align: right;
-        }
-
-       .projects-grid {
+        .projects-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 22px;
         }
 
@@ -333,22 +319,12 @@
                 0 20px 50px rgba(15, 23, 42, 0.08);
         }
 
-       .project-image {
+        .project-image {
             height: 220px;
-            background: #eef1f5;
-            overflow: hidden;
-        }
 
-        @media (max-width: 800px) {
-        
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        
-            .project-image {
-                height: 220px;
-            }
-        
+            background: #eef1f5;
+
+            overflow: hidden;
         }
 
         .project-image img {
@@ -542,6 +518,90 @@
 
 
         /* ========================================
+           WHATSAPP FLOATING BUTTON
+        ======================================== */
+
+        .whatsapp-float {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: var(--whatsapp);
+
+            color: white;
+
+            border-radius: 50%;
+
+            z-index: 2000;
+
+            box-shadow:
+                0 8px 25px rgba(37, 211, 102, 0.35);
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .whatsapp-float:hover {
+            background: var(--whatsapp-dark);
+
+            transform:
+                translateY(-4px)
+                scale(1.05);
+        }
+
+        .whatsapp-float svg {
+            width: 30px;
+            height: 30px;
+
+            fill: white;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+
+            right: 70px;
+
+            white-space: nowrap;
+
+            background: var(--text);
+
+            color: white;
+
+            padding: 8px 12px;
+
+            border-radius: 8px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transform: translateX(5px);
+
+            transition: 0.2s;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+
+            transform: translateX(0);
+        }
+
+
+        /* ========================================
            FOOTER
         ======================================== */
 
@@ -573,6 +633,19 @@
 
         .social-links a:hover {
             color: var(--primary);
+        }
+
+
+        /* ========================================
+           TABLET
+        ======================================== */
+
+        @media (max-width: 950px) {
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
         }
 
 
@@ -618,16 +691,6 @@
                 display: block;
             }
 
-            .section-header h2 {
-                font-size: 30px;
-            }
-
-            .section-header p {
-                margin-top: 8px;
-
-                text-align: left;
-            }
-
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -669,6 +732,19 @@
             .social-links {
                 margin-top: 10px;
             }
+
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+
+                right: 16px;
+                bottom: 16px;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
+            }
+
         }
 
 
@@ -689,6 +765,7 @@
             .project-links a {
                 font-size: 9px;
             }
+
         }
 
     </style>
@@ -728,10 +805,6 @@
                     LinkedIn
                 </a>
 
-                <a href="mailto:nikhilkadam.work01@gmail.com">
-                    Contact
-                </a>
-
             </div>
 
 
@@ -755,7 +828,7 @@
 
 
 <!-- ========================================
-     HERO / INTRO
+     HERO
 ======================================== -->
 
 <section class="hero container">
@@ -825,10 +898,8 @@
             <span class="section-label">
                 Selected Projects
             </span>
- 
 
         </div>
- 
 
     </div>
 
@@ -838,7 +909,7 @@
 
 
         <!-- =================================
-             AABAPAY
+             01 AABAPAY
         ================================== -->
 
         <article class="project-card">
@@ -847,7 +918,7 @@
 
                 <img
                     src="aabapay.jpg"
-                    alt="AabaPay Digital Payment Platform"
+                    alt="AabaPay"
                     loading="lazy"
                 >
 
@@ -860,16 +931,13 @@
                     01 / FinTech
                 </div>
 
-
                 <h3>
                     AabaPay
                 </h3>
 
-
                 <div class="project-subtitle">
                     Digital Payment & Settlement Platform
                 </div>
-
 
                 <p class="project-description">
 
@@ -882,50 +950,31 @@
 
                 </p>
 
-
                 <div class="tags">
 
-                    <span class="tag">
-                        Flutter
-                    </span>
-
-                    <span class="tag">
-                        Laravel
-                    </span>
-
-                    <span class="tag">
-                        Razorpay
-                    </span>
-
-                    <span class="tag">
-                        RazorpayX
-                    </span>
-
-                    <span class="tag">
-                        KYC APIs
-                    </span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Razorpay</span>
+                    <span class="tag">RazorpayX</span>
+                    <span class="tag">KYC APIs</span>
 
                 </div>
-
 
                 <div class="project-links">
 
                     <a
                         href="https://play.google.com/store/apps/details?id=com.aabapay.aabapay_app"
                         target="_blank"
-                        rel="noopener"
                         class="main-link"
                     >
                         Google Play ↗
                     </a>
 
-
                     <a
                         href="https://technicul.com/portfolio/aabapay"
                         target="_blank"
-                        rel="noopener"
                     >
-                        Project Details ↗
+                        Project ↗
                     </a>
 
                 </div>
@@ -937,7 +986,7 @@
 
 
         <!-- =================================
-             GIRVI
+             02 GIRVI
         ================================== -->
 
         <article class="project-card">
@@ -959,16 +1008,13 @@
                     02 / FinTech
                 </div>
 
-
                 <h3>
                     Girvi
                 </h3>
 
-
                 <div class="project-subtitle">
                     Gold Loan & Jewellery Management Platform
                 </div>
-
 
                 <p class="project-description">
 
@@ -982,55 +1028,37 @@
 
                 </p>
 
-
                 <div class="tags">
 
-                    <span class="tag">
-                        Flutter
-                    </span>
-
-                    <span class="tag">
-                        Laravel
-                    </span>
-
-                    <span class="tag">
-                        MySQL
-                    </span>
-
-                    <span class="tag">
-                        REST APIs
-                    </span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">REST APIs</span>
 
                 </div>
-
 
                 <div class="project-links">
 
                     <a
                         href="https://play.google.com/store/apps/details?id=com.technicul.girvi"
                         target="_blank"
-                        rel="noopener"
                         class="main-link"
                     >
                         Google Play ↗
                     </a>
 
-
                     <a
                         href="https://apps.apple.com/in/app/girvi-%E0%A4%97%E0%A4%B0%E0%A4%B5-manage-gold-loan/id6651831215"
                         target="_blank"
-                        rel="noopener"
                     >
                         App Store ↗
                     </a>
 
-
                     <a
                         href="https://technicul.com/portfolio/girvi-app"
                         target="_blank"
-                        rel="noopener"
                     >
-                        Project Details ↗
+                        Project ↗
                     </a>
 
                 </div>
@@ -1042,7 +1070,7 @@
 
 
         <!-- =================================
-             RAY'S INTERNATIONAL
+             03 RAYS
         ================================== -->
 
         <article class="project-card">
@@ -1064,16 +1092,13 @@
                     03 / Education
                 </div>
 
-
                 <h3>
                     Ray's International Pre-School
                 </h3>
 
-
                 <div class="project-subtitle">
                     School Management & RFID Attendance Platform
                 </div>
-
 
                 <p class="project-description">
 
@@ -1086,64 +1111,44 @@
 
                 </p>
 
-
                 <div class="tags">
 
-                    <span class="tag">
-                        Flutter
-                    </span>
-
-                    <span class="tag">
-                        Laravel
-                    </span>
-
-                    <span class="tag">
-                        AWS
-                    </span>
-
-                    <span class="tag">
-                        RFID / IoT
-                    </span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">RFID / IoT</span>
 
                 </div>
-
 
                 <div class="project-links">
 
                     <a
                         href="https://apps.apple.com/in/app/rays-international-pre-school/id6447643058"
                         target="_blank"
-                        rel="noopener"
                         class="main-link"
                     >
                         App Store ↗
                     </a>
 
-
                     <a
                         href="https://play.google.com/store/apps/details?id=com.raysinternational.raysinternational"
                         target="_blank"
-                        rel="noopener"
                     >
                         Google Play ↗
                     </a>
 
-
                     <a
                         href="https://raysinternational.in/"
                         target="_blank"
-                        rel="noopener"
                     >
                         Website ↗
                     </a>
 
-
                     <a
                         href="https://technicul.com/portfolio/rays-international-pre-school"
                         target="_blank"
-                        rel="noopener"
                     >
-                        Project Details ↗
+                        Project ↗
                     </a>
 
                 </div>
@@ -1155,7 +1160,7 @@
 
 
         <!-- =================================
-             TAXIRA
+             04 TAXIRA
         ================================== -->
 
         <article class="project-card">
@@ -1164,12 +1169,11 @@
 
                 <img
                     src="taxira.jpg"
-                    alt="Taxira Transportation Platform"
+                    alt="Taxira"
                     loading="lazy"
                 >
 
             </div>
-
 
             <div class="project-content">
 
@@ -1177,16 +1181,13 @@
                     04 / Mobility
                 </div>
 
-
                 <h3>
                     Taxira
                 </h3>
 
-
                 <div class="project-subtitle">
                     Transportation & Mobility Platform
                 </div>
-
 
                 <p class="project-description">
 
@@ -1197,37 +1198,23 @@
 
                 </p>
 
-
                 <div class="tags">
 
-                    <span class="tag">
-                        Flutter
-                    </span>
-
-                    <span class="tag">
-                        Laravel
-                    </span>
-
-                    <span class="tag">
-                        Maps
-                    </span>
-
-                    <span class="tag">
-                        REST APIs
-                    </span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Maps</span>
+                    <span class="tag">REST APIs</span>
 
                 </div>
-
 
                 <div class="project-links">
 
                     <a
                         href="https://technicul.com/portfolio/taxira"
                         target="_blank"
-                        rel="noopener"
                         class="main-link"
                     >
-                        Project Details ↗
+                        Project ↗
                     </a>
 
                 </div>
@@ -1239,7 +1226,7 @@
 
 
         <!-- =================================
-             MERA PHARMACY
+             05 MERA PHARMACY
         ================================== -->
 
         <article class="project-card">
@@ -1248,12 +1235,11 @@
 
                 <img
                     src="mera_pharmacy.jpg"
-                    alt="Mera Pharmacy Healthcare Platform"
+                    alt="Mera Pharmacy"
                     loading="lazy"
                 >
 
             </div>
-
 
             <div class="project-content">
 
@@ -1261,16 +1247,13 @@
                     05 / Healthcare
                 </div>
 
-
                 <h3>
                     Mera Pharmacy
                 </h3>
 
-
                 <div class="project-subtitle">
                     Pharmacy & Healthcare Platform
                 </div>
-
 
                 <p class="project-description">
 
@@ -1280,33 +1263,22 @@
 
                 </p>
 
-
                 <div class="tags">
 
-                    <span class="tag">
-                        Flutter
-                    </span>
-
-                    <span class="tag">
-                        Laravel
-                    </span>
-
-                    <span class="tag">
-                        REST APIs
-                    </span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">REST APIs</span>
 
                 </div>
-
 
                 <div class="project-links">
 
                     <a
                         href="https://technicul.com/portfolio/mera-pharmacy"
                         target="_blank"
-                        rel="noopener"
                         class="main-link"
                     >
-                        Project Details ↗
+                        Project ↗
                     </a>
 
                 </div>
@@ -1318,7 +1290,7 @@
 
 
         <!-- =================================
-             SERVICEWALA
+             06 SERVICEWALA
         ================================== -->
 
         <article class="project-card">
@@ -1327,12 +1299,11 @@
 
                 <img
                     src="servicewala.jpg"
-                    alt="Servicewala Service Booking Platform"
+                    alt="Servicewala"
                     loading="lazy"
                 >
 
             </div>
-
 
             <div class="project-content">
 
@@ -1340,53 +1311,40 @@
                     06 / Services
                 </div>
 
-
                 <h3>
                     Servicewala
                 </h3>
-
 
                 <div class="project-subtitle">
                     Service Booking Platform
                 </div>
 
-
                 <p class="project-description">
 
                     Service-booking application connecting
-                    customers and service operations through
-                    mobile workflows, backend APIs and booking
-                    management.
+                    customers with verified vendors for home
+                    and office services, with booking,
+                    payment and location-based workflows.
 
                 </p>
 
-
                 <div class="tags">
 
-                    <span class="tag">
-                        Flutter
-                    </span>
-
-                    <span class="tag">
-                        Laravel
-                    </span>
-
-                    <span class="tag">
-                        Firebase
-                    </span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">Payments</span>
 
                 </div>
-
 
                 <div class="project-links">
 
                     <a
                         href="https://technicul.com/portfolio/servicewala"
                         target="_blank"
-                        rel="noopener"
                         class="main-link"
                     >
-                        Project Details ↗
+                        Project ↗
                     </a>
 
                 </div>
@@ -1398,7 +1356,7 @@
 
 
         <!-- =================================
-             JAY KUBER TRADING
+             07 JAY KUBER
         ================================== -->
 
         <article class="project-card">
@@ -1413,23 +1371,19 @@
 
             </div>
 
-
             <div class="project-content">
 
                 <div class="project-number">
                     07 / Business
                 </div>
 
-
                 <h3>
                     Jay Kuber Trading
                 </h3>
 
-
                 <div class="project-subtitle">
                     Business Management Platform
                 </div>
-
 
                 <p class="project-description">
 
@@ -1439,33 +1393,22 @@
 
                 </p>
 
-
                 <div class="tags">
 
-                    <span class="tag">
-                        Flutter
-                    </span>
-
-                    <span class="tag">
-                        Laravel
-                    </span>
-
-                    <span class="tag">
-                        CRM
-                    </span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">CRM</span>
 
                 </div>
-
 
                 <div class="project-links">
 
                     <a
                         href="https://technicul.com/portfolio/jaykuber_trading"
                         target="_blank"
-                        rel="noopener"
                         class="main-link"
                     >
-                        Project Details ↗
+                        Project ↗
                     </a>
 
                 </div>
@@ -1477,7 +1420,7 @@
 
 
         <!-- =================================
-             VIVAAH SUTRA
+             08 VIVAAH SUTRA
         ================================== -->
 
         <article class="project-card">
@@ -1486,12 +1429,11 @@
 
                 <img
                     src="vivaahsutra.webp"
-                    alt="Vivaah Sutra Matrimonial Platform"
+                    alt="Vivaah Sutra"
                     loading="lazy"
                 >
 
             </div>
-
 
             <div class="project-content">
 
@@ -1499,16 +1441,13 @@
                     08 / Matrimony
                 </div>
 
-
                 <h3>
                     Vivaah Sutra
                 </h3>
 
-
                 <div class="project-subtitle">
                     Matrimonial Platform
                 </div>
-
 
                 <p class="project-description">
 
@@ -1518,33 +1457,440 @@
 
                 </p>
 
-
                 <div class="tags">
 
-                    <span class="tag">
-                        Flutter
-                    </span>
-
-                    <span class="tag">
-                        Laravel
-                    </span>
-
-                    <span class="tag">
-                        MySQL
-                    </span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">MySQL</span>
 
                 </div>
-
 
                 <div class="project-links">
 
                     <a
                         href="https://technicul.com/portfolio/vivaahsutra"
                         target="_blank"
-                        rel="noopener"
                         class="main-link"
                     >
-                        Project Details ↗
+                        Project ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             09 ARU CABS
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="aru-cabs.jpg"
+                    alt="Aru Cabs"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    09 / Mobility
+                </div>
+
+                <h3>
+                    Aru Cabs
+                </h3>
+
+                <div class="project-subtitle">
+                    Cab & Taxi Service Platform
+                </div>
+
+                <p class="project-description">
+
+                    Developed a scalable web portal and admin
+                    panel for cab and taxi operations, with
+                    customer-facing workflows and backend
+                    management.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Laravel</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">AWS</span>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="https://arux.technicul.com/"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Website ↗
+                    </a>
+
+                    <a
+                        href="https://technicul.com/portfolio/aru-cabs"
+                        target="_blank"
+                    >
+                        Project ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             10 AQARI 53
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="aqari53.jpg"
+                    alt="Aqari 53"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    10 / Real Estate
+                </div>
+
+                <h3>
+                    Aqari 53
+                </h3>
+
+                <div class="project-subtitle">
+                    Real Estate Listing Platform
+                </div>
+
+                <p class="project-description">
+
+                    Real estate platform for builders,
+                    developers and property owners to list
+                    properties and connect with verified buyers
+                    and tenants.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Real Estate</span>
+                    <span class="tag">REST APIs</span>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.customer.aqari53&hl=en"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Google Play ↗
+                    </a>
+
+                    <a
+                        href="https://apps.apple.com/in/app/aqari53/id6756963432"
+                        target="_blank"
+                    >
+                        App Store ↗
+                    </a>
+
+                    <a
+                        href="https://aqari53.com/"
+                        target="_blank"
+                    >
+                        Website ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             11 SHIPEX
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="shipex.jpg"
+                    alt="Shipex Moving"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    11 / Logistics
+                </div>
+
+                <h3>
+                    Shipex Moving
+                </h3>
+
+                <div class="project-subtitle">
+                    Packers, Movers & Relocation Platform
+                </div>
+
+                <p class="project-description">
+
+                    Relocation platform supporting household
+                    shifting, vehicle transportation, storage,
+                    booking management and real-time tracking.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Maps</span>
+                    <span class="tag">Tracking</span>
+                    <span class="tag">Shiprocket</span>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="https://shipexmoving.com/"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Website ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             12 CHAVAN FISH AGRO
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="chavan-fish.jpg"
+                    alt="Chavan Fish Agro"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    12 / E-Commerce
+                </div>
+
+                <h3>
+                    Chavan Fish Agro
+                </h3>
+
+                <div class="project-subtitle">
+                    Fresh Fish & Seafood Delivery Platform
+                </div>
+
+                <p class="project-description">
+
+                    E-commerce mobile application for fresh
+                    seafood ordering with product catalogue,
+                    secure payments, delivery management,
+                    order tracking and customer support.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">E-Commerce</span>
+                    <span class="tag">Payments</span>
+                    <span class="tag">Delivery</span>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="https://chavanbrothersfreshfish.com/"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Website ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             13 MANGROVE PARKS
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="mangrove.jpg"
+                    alt="Mangrove Parks App"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    13 / Government & Tourism
+                </div>
+
+                <h3>
+                    Mangrove Parks
+                </h3>
+
+                <div class="project-subtitle">
+                    Park Booking & Visitor Management Platform
+                </div>
+
+                <p class="project-description">
+
+                    Digital visitor platform for Mumbai's
+                    mangrove parks with online booking,
+                    real-time slot availability, visitor
+                    management, booking history and reminders.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Booking</span>
+                    <span class="tag">AWS</span>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="https://mangrove.technicul.com/"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Website ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             14 TURFWALA
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="turfwala.jpg"
+                    alt="TurfWala"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    14 / Sports
+                </div>
+
+                <h3>
+                    TurfWala
+                </h3>
+
+                <div class="project-subtitle">
+                    Turf Booking & Operations Platform
+                </div>
+
+                <p class="project-description">
+
+                    Turf booking and operations platform for
+                    players, turf owners and admin teams with
+                    slot management, bookings, game tracking,
+                    OTP login and support workflows.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Booking</span>
+                    <span class="tag">OTP</span>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="#"
+                        class="main-link"
+                    >
+                        Play Store
                     </a>
 
                 </div>
@@ -1641,6 +1987,42 @@
     </div>
 
 </footer>
+
+
+
+<!-- ========================================
+     WHATSAPP FLOATING BUTTON
+======================================== -->
+
+<a
+    href="https://wa.me/919594914849?text=Hi%20Nikhil%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with Nikhil on WhatsApp"
+>
+
+    <span class="whatsapp-tooltip">
+        Chat with me on WhatsApp
+    </span>
+
+
+    <svg
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+        <path
+            d="M19.11 17.21c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.33-.79-.7-1.33-1.56-1.49-1.82-.16-.27-.02-.41.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.46-.84-2-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"
+        />
+
+        <path
+            d="M16.03 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.59 4.39 1.62 6.24L3.2 28.8l6.75-1.62a12.75 12.75 0 0 0 6.08 1.55h.01c7.07 0 12.8-5.73 12.8-12.8S23.1 3.2 16.03 3.2zm0 23.45h-.01a10.62 10.62 0 0 1-5.42-1.48l-.39-.23-4.01.96 1.07-3.91-.25-.4a10.62 10.62 0 1 1 9.01 5.06z"
+        />
+
+    </svg>
+
+</a>
 
 
 </body>
