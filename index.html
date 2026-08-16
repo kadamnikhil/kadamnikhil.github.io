@@ -1,1570 +1,1715 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Nikhil Kadam | Senior Software Developer</title>
-
-<meta name="description" content="Nikhil Kadam — Senior Software Developer specializing in Flutter, Laravel, REST APIs, Firebase, AWS and production mobile applications.">
-<meta name="author" content="Nikhil Kadam">
-
-<meta property="og:title" content="Nikhil Kadam | Senior Software Developer">
-<meta property="og:description" content="Senior Software Developer specializing in Flutter and Full Stack development.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://kadamnikhil.github.io/">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-    --bg:#07090d;
-    --bg2:#0b1018;
-    --card:rgba(16,22,31,.78);
-    --card2:#0d131c;
-    --border:rgba(255,255,255,.09);
-    --text:#f4f7fb;
-    --muted:#9ca7b7;
-    --primary:#62d7ff;
-    --primary2:#7c6cff;
-    --green:#51e6a8;
-    --max:1180px;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-    font-family:Inter,sans-serif;
-    color:var(--text);
-    background:
-        radial-gradient(circle at 10% 0%,rgba(98,215,255,.10),transparent 28%),
-        radial-gradient(circle at 90% 10%,rgba(124,108,255,.12),transparent 30%),
-        var(--bg);
-    line-height:1.65;
-    overflow-x:hidden;
-}
-
-body:before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
-                     linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
-    background-size:55px 55px;
-    mask-image:linear-gradient(to bottom,black,transparent 80%);
-}
-
-a{color:inherit;text-decoration:none}
-
-img{max-width:100%;display:block}
-
-.container{
-    width:min(var(--max),calc(100% - 40px));
-    margin:auto;
-}
-
-section{padding:105px 0;position:relative}
-
-.section-heading{
-    max-width:720px;
-    margin-bottom:42px;
-}
-
-.eyebrow{
-    color:var(--primary);
-    font-size:11px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:10px;
-}
-
-.section-heading h2{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(32px,4vw,48px);
-    line-height:1.05;
-    letter-spacing:-1.8px;
-}
-
-.section-heading p{
-    color:var(--muted);
-    margin-top:13px;
-    font-size:14px;
-}
-
-/* HEADER */
-header{
-    position:fixed;
-    top:0;left:0;right:0;
-    z-index:1000;
-    background:rgba(7,9,13,.72);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.nav{
-    height:74px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:21px;
-    font-weight:700;
-}
-
-.logo span{color:var(--primary)}
-
-.nav-links{
-    display:flex;
-    gap:25px;
-    color:#cbd2dc;
-    font-size:13px;
-}
-
-.nav-links a{transition:.25s}
-.nav-links a:hover{color:white}
-
-.nav-button{
-    padding:10px 15px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    font-size:12px;
-    font-weight:700;
-    background:rgba(255,255,255,.04);
-}
-
-.menu{
-    display:none;
-    font-size:25px;
-    cursor:pointer;
-}
-
-/* HERO */
-.hero{
-    padding-top:145px;
-    padding-bottom:70px;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.08fr .92fr;
-    gap:65px;
-    align-items:center;
-}
-
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:7px 11px;
-    border:1px solid var(--border);
-    border-radius:999px;
-    color:#cdd5df;
-    font-size:11px;
-    font-weight:700;
-    background:rgba(255,255,255,.035);
-    margin-bottom:22px;
-}
-
-.status-dot{
-    width:7px;height:7px;
-    border-radius:50%;
-    background:var(--green);
-    box-shadow:0 0 12px var(--green);
-}
-
-.hero h1{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(48px,6.5vw,78px);
-    line-height:.98;
-    letter-spacing:-4px;
-}
-
-.gradient-text{
-    display:block;
-    background:linear-gradient(100deg,var(--primary),#a38cff);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.hero-description{
-    max-width:650px;
-    color:var(--muted);
-    font-size:16px;
-    line-height:1.8;
-    margin-top:24px;
-}
-
-.hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:28px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:44px;
-    padding:0 17px;
-    border-radius:11px;
-    font-size:12px;
-    font-weight:800;
-    transition:.25s;
-}
-
-.btn-primary{
-    color:#061018;
-    background:linear-gradient(100deg,var(--primary),#9b8dff);
-}
-
-.btn-outline{
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.035);
-}
-
-.btn:hover{transform:translateY(-2px)}
-
-.hero-visual{
-    display:flex;
-    justify-content:center;
-}
-
-.hero-card{
-    width:min(390px,100%);
-    aspect-ratio:1/1.08;
-    border-radius:30px;
-    border:1px solid var(--border);
-    background:
-        radial-gradient(circle at 25% 20%,rgba(98,215,255,.18),transparent 28%),
-        radial-gradient(circle at 80% 75%,rgba(124,108,255,.18),transparent 30%),
-        linear-gradient(145deg,#101823,#090d14);
-    box-shadow:0 35px 100px rgba(0,0,0,.45);
-    position:relative;
-    overflow:hidden;
-    padding:28px;
-}
-
-.hero-card:after{
-    content:"";
-    position:absolute;
-    width:230px;height:230px;
-    right:-80px;bottom:-80px;
-    border-radius:50%;
-    border:1px solid rgba(98,215,255,.16);
-    box-shadow:0 0 0 35px rgba(98,215,255,.025),
-               0 0 0 70px rgba(98,215,255,.018);
-}
-
-.code-window{
-    position:absolute;
-    inset:28px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    background:rgba(5,8,13,.7);
-    padding:23px;
-}
-
-.window-dots{display:flex;gap:6px;margin-bottom:30px}
-.window-dots span{width:8px;height:8px;border-radius:50%;background:#3c4655}
-
-.code-line{
-    height:8px;
-    border-radius:8px;
-    background:rgba(255,255,255,.09);
-    margin:12px 0;
-}
-
-.code-line.short{width:52%}
-.code-line.medium{width:72%}
-.code-line.long{width:92%}
-.code-line.blue{background:linear-gradient(90deg,rgba(98,215,255,.7),rgba(124,108,255,.12))}
-.code-line.green{background:linear-gradient(90deg,rgba(81,230,168,.65),rgba(81,230,168,.08))}
-
-.hero-card-label{
-    position:absolute;
-    bottom:28px;
-    left:28px;
-    right:28px;
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    z-index:3;
-}
-
-.hero-card-label strong{
-    font-family:"Space Grotesk";
-    font-size:25px;
-}
-
-.hero-card-label span{
-    color:var(--muted);
-    font-size:11px;
-}
-
-/* STATS */
-.stats{
-    margin-top:65px;
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    border:1px solid var(--border);
-    border-radius:18px;
-    overflow:hidden;
-    background:rgba(255,255,255,.025);
-}
-
-.stat{
-    padding:22px 15px;
-    text-align:center;
-    border-right:1px solid var(--border);
-}
-
-.stat:last-child{border-right:0}
-
-.stat-number{
-    font-family:"Space Grotesk";
-    font-size:27px;
-    font-weight:700;
-}
-
-.stat-label{
-    color:var(--muted);
-    font-size:10px;
-    margin-top:3px;
-}
-
-/* ABOUT */
-.about-grid{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:18px;
-}
-
-.about-card{
-    padding:30px;
-    border-radius:22px;
-    border:1px solid var(--border);
-    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
-    box-shadow:0 20px 60px rgba(0,0,0,.22);
-}
-
-.about-card h3{
-    font-family:"Space Grotesk";
-    font-size:24px;
-    margin-bottom:12px;
-}
-
-.about-card p{
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.75;
-}
-
-.about-highlights{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:9px;
-    margin-top:22px;
-}
-
-.highlight{
-    padding:15px;
-    border-radius:13px;
-    background:rgba(255,255,255,.035);
-    border:1px solid var(--border);
-}
-
-.highlight strong{
-    display:block;
-    font-family:"Space Grotesk";
-    font-size:22px;
-}
-
-.highlight span{
-    display:block;
-    color:var(--muted);
-    font-size:10px;
-}
-
-/* SKILLS */
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
-}
-
-.skill-card{
-    padding:25px;
-    border:1px solid var(--border);
-    border-radius:18px;
-    background:var(--card);
-}
-
-.skill-card h3{
-    font-family:"Space Grotesk";
-    font-size:17px;
-    margin-bottom:13px;
-}
-
-.skill-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-}
-
-.skill-tag{
-    padding:7px 10px;
-    border-radius:8px;
-    color:#cbd4df;
-    font-size:10px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.07);
-}
-
-/* PROJECTS */
-.project-toolbar{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-bottom:25px;
-}
-
-.filter-btn{
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.035);
-    color:#adb8c7;
-    border-radius:9px;
-    padding:9px 13px;
-    font-size:11px;
-    font-weight:700;
-    cursor:pointer;
-}
-
-.filter-btn.active,
-.filter-btn:hover{
-    color:#061018;
-    background:var(--primary);
-    border-color:var(--primary);
-}
-
-.projects-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-}
-
-.project-card{
-    border:1px solid var(--border);
-    border-radius:22px;
-    overflow:hidden;
-    background:var(--card);
-    transition:.3s;
-}
-
-.project-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(98,215,255,.25);
-    box-shadow:0 25px 70px rgba(0,0,0,.35);
-}
-
-.project-image{
-    height:245px;
-    background:#0a0f16;
-    overflow:hidden;
-}
-
-.project-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.project-card:hover .project-image img{transform:scale(1.04)}
-
-.project-content{padding:22px}
-
-.project-type{
-    color:var(--primary);
-    font-size:10px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:1.2px;
-}
-
-.project-content h3{
-    font-family:"Space Grotesk";
-    font-size:24px;
-    margin:6px 0 8px;
-}
-
-.project-content p{
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.7;
-}
-
-.tech{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-top:15px;
-}
-
-.tech span{
-    font-size:9px;
-    padding:5px 8px;
-    border-radius:7px;
-    background:rgba(255,255,255,.045);
-    color:#b9c4d1;
-}
-
-.project-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:17px;
-}
-
-.project-links a{
-    font-size:10px;
-    font-weight:800;
-    padding:8px 10px;
-    border-radius:8px;
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.03);
-}
-
-.project-links a:hover{
-    border-color:var(--primary);
-    color:var(--primary);
-}
-
-/* EXPERIENCE */
-.timeline{
-    position:relative;
-    max-width:900px;
-}
-
-.timeline:before{
-    content:"";
-    position:absolute;
-    left:8px;
-    top:8px;
-    bottom:8px;
-    width:1px;
-    background:linear-gradient(var(--primary),rgba(124,108,255,.1));
-}
-
-.timeline-item{
-    position:relative;
-    padding-left:38px;
-    margin-bottom:38px;
-}
-
-.timeline-dot{
-    position:absolute;
-    left:3px;
-    top:7px;
-    width:11px;height:11px;
-    border-radius:50%;
-    background:var(--primary);
-    box-shadow:0 0 18px rgba(98,215,255,.6);
-}
-
-.timeline-role{
-    font-family:"Space Grotesk";
-    font-size:21px;
-    font-weight:700;
-}
-
-.timeline-company{
-    color:var(--primary);
-    font-size:13px;
-    font-weight:700;
-    margin-top:2px;
-}
-
-.timeline-date{
-    color:#737f8e;
-    font-size:10px;
-    margin-top:3px;
-}
-
-.timeline ul{
-    margin-top:13px;
-    padding-left:17px;
-}
-
-.timeline li{
-    color:var(--muted);
-    font-size:12px;
-    margin:7px 0;
-}
-
-/* EDUCATION */
-.education-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.education-card{
-    padding:25px;
-    border:1px solid var(--border);
-    border-radius:18px;
-    background:var(--card);
-}
-
-.education-card h3{
-    font-family:"Space Grotesk";
-    font-size:17px;
-}
-
-.education-card .degree{
-    color:var(--primary);
-    font-size:12px;
-    font-weight:700;
-    margin-top:6px;
-}
-
-.education-card p{
-    color:var(--muted);
-    font-size:11px;
-    margin-top:5px;
-}
-
-/* CONTACT */
-.contact-box{
-    text-align:center;
-    padding:65px 25px;
-    border:1px solid var(--border);
-    border-radius:28px;
-    background:
-        radial-gradient(circle at 50% 0%,rgba(98,215,255,.10),transparent 45%),
-        var(--card);
-}
-
-.contact-box h2{
-    font-family:"Space Grotesk";
-    font-size:clamp(30px,4vw,46px);
-    line-height:1.1;
-}
-
-.contact-box p{
-    max-width:620px;
-    margin:13px auto 0;
-    color:var(--muted);
-    font-size:13px;
-}
-
-.contact-actions{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:9px;
-    margin-top:24px;
-}
-
-/* FOOTER */
-footer{
-    padding:25px 0;
-    border-top:1px solid var(--border);
-}
-
-.footer-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    color:#687384;
-    font-size:10px;
-}
-
-.socials{
-    display:flex;
-    gap:15px;
-}
-
-.socials a:hover{color:var(--primary)}
-
-/* REVEAL */
-.reveal{
-    opacity:0;
-    transform:translateY(22px);
-    transition:opacity .7s ease,transform .7s ease;
-}
-
-.reveal.visible{
-    opacity:1;
-    transform:none;
-}
-
-/* MOBILE NAV */
-.mobile-nav{
-    display:none;
-    position:absolute;
-    top:74px;
-    left:13px;
-    right:13px;
-    padding:13px;
-    border:1px solid var(--border);
-    border-radius:15px;
-    background:rgba(9,12,18,.96);
-    backdrop-filter:blur(18px);
-}
-
-.mobile-nav a{
-    display:block;
-    padding:11px;
-    color:#cbd3dd;
-    font-size:13px;
-}
-
-/* RESPONSIVE */
-@media(max-width:950px){
-    .nav-links,.nav-button{display:none}
-    .menu{display:block}
-
-    .hero-grid{
-        grid-template-columns:1fr;
-        gap:35px;
-        text-align:center;
-    }
-
-    .hero-description{margin-left:auto;margin-right:auto}
-    .hero-actions{justify-content:center}
-
-    .hero-visual{order:-1}
-
-    .hero-card{
-        width:min(330px,100%);
-    }
-
-    .stats{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .stat:nth-child(3){border-right:0}
-    .stat:nth-child(4),
-    .stat:nth-child(5){
-        border-top:1px solid var(--border);
-    }
-
-    .about-grid{
-        grid-template-columns:1fr;
-    }
-
-    .projects-grid{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:650px){
-    .container{
-        width:calc(100% - 26px);
-    }
-
-    section{
-        padding:75px 0;
-    }
-
-    .hero{
-        padding-top:120px;
-        min-height:auto;
-    }
-
-    .hero h1{
-        font-size:45px;
-        letter-spacing:-2.5px;
-    }
-
-    .hero-description{
-        font-size:13px;
-        line-height:1.75;
-    }
-
-    .hero-card{
-        width:270px;
-        border-radius:23px;
-    }
-
-    .code-window{
-        inset:20px;
-        padding:18px;
-    }
-
-    .hero-card-label{
-        left:20px;
-        right:20px;
-        bottom:20px;
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-        margin-top:40px;
-    }
-
-    .stat{
-        border-right:1px solid var(--border);
-        border-top:1px solid var(--border);
-    }
-
-    .stat:nth-child(-n+2){border-top:0}
-    .stat:nth-child(2n){border-right:0}
-
-    .section-heading{
-        margin-bottom:28px;
-    }
-
-    .section-heading h2{
-        font-size:32px;
-        letter-spacing:-1px;
-    }
-
-    .about-card{
-        padding:21px 18px;
-        border-radius:18px;
-    }
-
-    .about-card h3{
-        font-size:20px;
-    }
-
-    .about-card p{
-        font-size:12.5px;
-    }
-
-    .about-highlights{
-        grid-template-columns:repeat(2,1fr);
-        gap:8px;
-    }
-
-    .highlight{
-        padding:13px 11px;
-    }
-
-    .highlight strong{
-        font-size:19px;
-    }
-
-    .highlight span{
-        font-size:9px;
-    }
-
-    .skills-grid,
-    .education-grid{
-        grid-template-columns:1fr;
-    }
-
-    .project-image{
-        height:210px;
-    }
-
-    .project-content{
-        padding:19px;
-    }
-
-    .project-content h3{
-        font-size:21px;
-    }
-
-    .timeline-item{
-        padding-left:30px;
-    }
-
-    .contact-box{
-        padding:45px 18px;
-    }
-
-    .footer-content{
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nikhil Kadam | Senior Software Developer</title>
+
+    <meta
+        name="description"
+        content="Nikhil Kadam - Senior Software Developer specializing in Flutter and Full Stack development."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background: #f7f8fa;
+            --white: #ffffff;
+            --text: #111827;
+            --muted: #667085;
+            --border: #e5e7eb;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --soft-blue: #eff6ff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 32px));
+            margin: auto;
+        }
+
+
+        /* ========================================
+           NAVBAR
+        ======================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(247, 248, 250, 0.92);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 10px 15px;
+
+            background: var(--text);
+            color: white;
+
+            border-radius: 9px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .resume-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+
+        /* ========================================
+           HERO
+        ======================================== */
+
+        .hero {
+            padding: 105px 0 80px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 7px 13px;
+
+            border-radius: 999px;
+
+            background: var(--soft-blue);
+            border: 1px solid #dbeafe;
+
+            color: var(--primary);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin-top: 20px;
+
+            font-size: clamp(42px, 6vw, 70px);
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            max-width: 700px;
+
+            margin: 22px auto 0;
+
+            color: var(--muted);
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+
+            display: flex;
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 44px;
+
+            padding: 0 18px;
+
+            border-radius: 10px;
+
+            border: 1px solid var(--border);
+
+            background: white;
+
+            font-size: 13px;
+            font-weight: 750;
+
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-dark {
+            background: var(--text);
+            color: white;
+
+            border-color: var(--text);
+        }
+
+
+        /* ========================================
+           ABOUT
+        ======================================== */
+
+        .about {
+            padding-bottom: 90px;
+        }
+
+        .section-label {
+            color: var(--primary);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+        .about h2 {
+            margin-top: 8px;
+
+            font-size: 34px;
+
+            letter-spacing: -1.2px;
+        }
+
+        .about-content {
+            max-width: 780px;
+
+            margin-top: 20px;
+        }
+
+        .about-content p {
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ========================================
+           PROJECTS
+        ======================================== */
+
+        .projects-section {
+            padding-bottom: 100px;
+        }
+
+        .section-header {
+            display: flex;
+
+            align-items: end;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 30px;
+        }
+
+        .section-header h2 {
+            margin-top: 7px;
+
+            font-size: 38px;
+
+            letter-spacing: -1.5px;
+        }
+
+        .section-header p {
+            max-width: 450px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            text-align: right;
+        }
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+
+        /* ========================================
+           PROJECT CARD
+        ======================================== */
+
+        .project-card {
+            background: var(--white);
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #d5dae3;
+
+            box-shadow:
+                0 20px 50px rgba(15, 23, 42, 0.08);
+        }
+
+        .project-image {
+            height: 260px;
+
+            background: #eef1f5;
+
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.04);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-number {
+            color: var(--primary);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+        .project-content h3 {
+            margin-top: 6px;
+
+            font-size: 24px;
+
+            line-height: 1.2;
+
+            letter-spacing: -0.6px;
+        }
+
+        .project-subtitle {
+            margin-top: 5px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            font-weight: 650;
+        }
+
+        .project-description {
+            margin-top: 14px;
+
+            color: #596273;
+
+            font-size: 13px;
+
+            line-height: 1.75;
+        }
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-top: 17px;
+        }
+
+        .tag {
+            padding: 5px 9px;
+
+            border-radius: 7px;
+
+            background: #f3f4f6;
+
+            border: 1px solid #eaecf0;
+
+            color: #475467;
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+        .project-links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 21px;
+        }
+
+        .project-links a {
+            min-height: 36px;
+
+            padding: 0 11px;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+
+            border-radius: 8px;
+
+            font-size: 10px;
+
+            font-weight: 750;
+
+            transition: 0.2s;
+        }
+
+        .project-links a:hover {
+            border-color: var(--primary);
+
+            color: var(--primary);
+        }
+
+        .project-links .main-link {
+            background: var(--text);
+
+            color: white;
+
+            border-color: var(--text);
+        }
+
+        .project-links .main-link:hover {
+            background: var(--primary);
+
+            border-color: var(--primary);
+
+            color: white;
+        }
+
+
+        /* ========================================
+           RESUME CTA
+        ======================================== */
+
+        .resume-section {
+            margin: 10px 0 90px;
+
+            padding: 45px;
+
+            border-radius: 24px;
+
+            background: var(--text);
+
+            color: white;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+        .resume-section h2 {
+            font-size: 28px;
+
+            line-height: 1.2;
+
+            letter-spacing: -0.8px;
+        }
+
+        .resume-section p {
+            margin-top: 7px;
+
+            color: #aeb7c5;
+
+            font-size: 13px;
+        }
+
+        .resume-section .btn {
+            flex-shrink: 0;
+
+            background: white;
+
+            color: var(--text);
+
+            border-color: white;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 28px 0 40px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .footer-content {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+
+            gap: 18px;
+
+            font-weight: 700;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+
+        /* ========================================
+           MOBILE
+        ======================================== */
+
+        @media (max-width: 800px) {
+
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            .nav {
+                height: 64px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 65px 0 65px;
+
+                text-align: left;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                justify-content: flex-start;
+            }
+
+            .about {
+                padding-bottom: 65px;
+            }
+
+            .about h2 {
+                font-size: 29px;
+            }
+
+            .about-content p {
+                font-size: 13px;
+            }
+
+            .section-header {
+                display: block;
+            }
+
+            .section-header h2 {
+                font-size: 30px;
+            }
+
+            .section-header p {
+                margin-top: 8px;
+
+                text-align: left;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 220px;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+
+            .project-content h3 {
+                font-size: 21px;
+            }
+
+            .resume-section {
+                display: block;
+
+                padding: 28px 22px;
+
+                margin-bottom: 65px;
+            }
+
+            .resume-section h2 {
+                font-size: 24px;
+            }
+
+            .resume-section .btn {
+                width: 100%;
+
+                margin-top: 20px;
+            }
+
+            .footer-content {
+                display: block;
+            }
+
+            .social-links {
+                margin-top: 10px;
+            }
+        }
+
+
+        @media (max-width: 430px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .project-image {
+                height: 205px;
+            }
+
+            .project-content {
+                padding: 19px;
+            }
+
+            .project-links a {
+                font-size: 9px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<header>
-    <div class="container nav">
-        <a href="#" class="logo">Nikhil<span>.</span></a>
 
-        <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+<!-- ========================================
+     NAVBAR
+======================================== -->
+
+<header class="navbar">
+
+    <div class="container">
+
+        <nav class="nav">
+
+            <a href="#" class="logo">
+                Nikhil<span>.</span>
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/kadam-nikhil/"
+                    target="_blank"
+                >
+                    LinkedIn
+                </a>
+
+                <a href="mailto:nikhilkadam.work01@gmail.com">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <a
+                href="Nikhil_Kadam_Resume.pdf"
+                download
+                class="resume-btn"
+            >
+                ↓ Download Resume
+            </a>
+
         </nav>
 
-        <a class="nav-button" href="Nikhil_Kadam_Resume.pdf" target="_blank">
-            Resume
-        </a>
-
-        <div class="menu" onclick="toggleMobileNav()">☰</div>
     </div>
 
-    <div class="mobile-nav" id="mobileNav">
-        <a href="#about" onclick="closeMobileNav()">About</a>
-        <a href="#skills" onclick="closeMobileNav()">Skills</a>
-        <a href="#projects" onclick="closeMobileNav()">Projects</a>
-        <a href="#experience" onclick="closeMobileNav()">Experience</a>
-        <a href="#education" onclick="closeMobileNav()">Education</a>
-        <a href="#contact" onclick="closeMobileNav()">Contact</a>
-        <a href="Nikhil_Kadam_Resume.pdf" target="_blank">Download Resume</a>
-    </div>
 </header>
+
+
 
 <main>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="container">
 
-        <div class="hero-grid">
+<!-- ========================================
+     HERO
+======================================== -->
 
-            <div class="reveal">
-                <div class="badge">
-                    <span class="status-dot"></span>
-                    Available for opportunities
-                </div>
+<section class="hero container">
 
-                <h1>
-                    Senior
-                    <span class="gradient-text">Flutter Developer</span>
-                </h1>
+    <span class="hero-badge">
+        Senior Software Developer
+    </span>
 
-                <p class="hero-description">
-                    I build scalable, production-ready mobile applications
-                    using Flutter and Dart, backed by Laravel APIs, Firebase,
-                    AWS infrastructure and real-world integrations.
-                </p>
 
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">View My Work →</a>
-                    <a href="Nikhil_Kadam_Resume.pdf" target="_blank" class="btn btn-outline">View Resume</a>
-                    <a href="https://www.linkedin.com/in/kadam-nikhil/" target="_blank" class="btn btn-outline">LinkedIn</a>
-                </div>
-            </div>
+    <h1>
 
-            <div class="hero-visual reveal">
-                <div class="hero-card">
+        Hi, I'm
+        <span>
+            Nikhil Kadam
+        </span>
 
-                    <div class="code-window">
-                        <div class="window-dots">
-                            <span></span><span></span><span></span>
-                        </div>
+    </h1>
 
-                        <div class="code-line blue long"></div>
-                        <div class="code-line medium"></div>
-                        <div class="code-line green short"></div>
-                        <div class="code-line long"></div>
-                        <div class="code-line blue medium"></div>
-                        <div class="code-line short"></div>
-                        <div class="code-line green medium"></div>
-                        <div class="code-line long"></div>
-                    </div>
 
-                    <div class="hero-card-label">
-                        <div>
-                            <strong>Flutter + Full Stack</strong>
-                            <span>Mobile • Backend • Cloud</span>
-                        </div>
-                        <span>5+ Years</span>
-                    </div>
+    <p class="hero-description">
 
-                </div>
-            </div>
+        I build production-ready mobile applications
+        and scalable digital solutions using Flutter,
+        Laravel and modern backend technologies.
 
-        </div>
+    </p>
 
-        <div class="stats reveal">
-            <div class="stat">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">25+</div>
-                <div class="stat-label">Mobile Apps</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">30+</div>
-                <div class="stat-label">Published Apps</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">250K+</div>
-                <div class="stat-label">Users Served</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">8</div>
-                <div class="stat-label">Developers Led</div>
-            </div>
-        </div>
+
+    <div class="hero-buttons">
+
+        <a
+            href="#projects"
+            class="btn btn-primary"
+        >
+            View My Projects ↓
+        </a>
+
+
+        <a
+            href="Nikhil_Kadam_Resume.pdf"
+            download
+            class="btn"
+        >
+            Download Resume
+        </a>
 
     </div>
+
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-    <div class="container">
 
-        <div class="section-heading reveal">
-            <div class="eyebrow">About Me</div>
-            <h2>Building products that solve real problems.</h2>
-            <p>Mobile-first development with strong backend and deployment experience.</p>
-        </div>
 
-        <div class="about-grid">
+<!-- ========================================
+     ABOUT
+======================================== -->
 
-            <div class="about-card reveal">
-                <h3>Flutter First.</h3>
+<section
+    id="about"
+    class="container about"
+>
 
-                <p>
-                    My primary focus is Flutter and Dart. I enjoy turning
-                    complex business requirements into simple, reliable and
-                    scalable mobile experiences.
-                </p>
+    <span class="section-label">
+        About Me
+    </span>
 
-                <div class="about-highlights">
-                    <div class="highlight">
-                        <strong>25+</strong>
-                        <span>Mobile Applications</span>
-                    </div>
-                    <div class="highlight">
-                        <strong>30+</strong>
-                        <span>CRM Systems</span>
-                    </div>
-                    <div class="highlight">
-                        <strong>250K+</strong>
-                        <span>Users Served</span>
-                    </div>
-                    <div class="highlight">
-                        <strong>8</strong>
-                        <span>Developers Led</span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="about-card reveal">
-                <h3>End-to-End Engineering</h3>
+    <h2>
+        Building products that solve real problems.
+    </h2>
 
-                <p>
-                    Beyond Flutter, I work across the complete application
-                    stack — REST APIs, Laravel backend systems, MySQL,
-                    Firebase services, payment integrations, real-time
-                    features and AWS deployment.
-                </p>
 
-                <p style="margin-top:14px;">
-                    This allows me to understand the complete product lifecycle
-                    from requirements and architecture to development,
-                    deployment and production support.
-                </p>
-            </div>
+    <div class="about-content">
 
-        </div>
+        <p>
+
+            I'm a Senior Software Developer specializing in
+            <strong>Flutter and Full Stack development</strong>,
+            with experience building production mobile applications,
+            Laravel backend systems, CRM platforms and
+            real-world integrations.
+
+        </p>
+
     </div>
+
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-    <div class="container">
 
-        <div class="section-heading reveal">
-            <div class="eyebrow">Technical Skills</div>
-            <h2>Tools I work with.</h2>
-        </div>
 
-        <div class="skills-grid">
+<!-- ========================================
+     PROJECTS
+======================================== -->
 
-            <div class="skill-card reveal">
-                <h3>Mobile Development</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Flutter</span>
-                    <span class="skill-tag">Dart</span>
-                    <span class="skill-tag">Android</span>
-                    <span class="skill-tag">iOS</span>
-                    <span class="skill-tag">REST APIs</span>
-                </div>
-            </div>
+<section
+    id="projects"
+    class="container projects-section"
+>
 
-            <div class="skill-card reveal">
-                <h3>State & Architecture</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Bloc</span>
-                    <span class="skill-tag">GetX</span>
-                    <span class="skill-tag">MVC</span>
-                    <span class="skill-tag">Clean Architecture</span>
-                </div>
-            </div>
 
-            <div class="skill-card reveal">
-                <h3>Firebase & Real-Time</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">FCM</span>
-                    <span class="skill-tag">Authentication</span>
-                    <span class="skill-tag">Firestore</span>
-                    <span class="skill-tag">WebSockets</span>
-                </div>
-            </div>
+    <div class="section-header">
 
-            <div class="skill-card reveal">
-                <h3>Payments & Integrations</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Razorpay</span>
-                    <span class="skill-tag">RazorpayX</span>
-                    <span class="skill-tag">PhonePe</span>
-                    <span class="skill-tag">ICICI Bank</span>
-                    <span class="skill-tag">Shiprocket</span>
-                    <span class="skill-tag">Shiprocket Quick</span>
-                </div>
-            </div>
+        <div>
 
-            <div class="skill-card reveal">
-                <h3>Backend</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Laravel</span>
-                    <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">REST API Development</span>
-                </div>
-            </div>
+            <span class="section-label">
+                My Work
+            </span>
 
-            <div class="skill-card reveal">
-                <h3>Frontend</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">React.js</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                </div>
-            </div>
 
-            <div class="skill-card reveal">
-                <h3>Cloud & Deployment</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">AWS EC2</span>
-                    <span class="skill-tag">AWS S3</span>
-                    <span class="skill-tag">Server Deployment</span>
-                </div>
-            </div>
-
-            <div class="skill-card reveal">
-                <h3>Tools</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Postman</span>
-                    <span class="skill-tag">Swagger</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">Cursor</span>
-                    <span class="skill-tag">Codex</span>
-                </div>
-            </div>
+            <h2>
+                Selected Projects
+            </h2>
 
         </div>
+
+
+        <p>
+
+            A selection of production applications and
+            digital platforms I've worked on across
+            different industries.
+
+        </p>
+
     </div>
+
+
+
+    <div class="projects-grid">
+
+
+
+        <!-- =================================
+             AABAPAY
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="aabapay.jpg"
+                    alt="AabaPay Digital Payment Platform"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    01 / FinTech
+                </div>
+
+
+                <h3>
+                    AabaPay
+                </h3>
+
+
+                <div class="project-subtitle">
+                    Digital Payment & Settlement Platform
+                </div>
+
+
+                <p class="project-description">
+
+                    Production Flutter application for digital
+                    payments and automated bank settlements serving
+                    <strong>250K+ customers</strong>.
+
+                    Integrated Razorpay, RazorpayX and third-party
+                    Aadhaar, PAN and photo verification APIs.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Flutter
+                    </span>
+
+                    <span class="tag">
+                        Laravel
+                    </span>
+
+                    <span class="tag">
+                        Razorpay
+                    </span>
+
+                    <span class="tag">
+                        RazorpayX
+                    </span>
+
+                    <span class="tag">
+                        KYC APIs
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.aabapay.aabapay_app"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Google Play ↗
+                    </a>
+
+
+                    <a
+                        href="https://technicul.com/portfolio/aabapay"
+                        target="_blank"
+                    >
+                        Project Details ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GIRVI
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="girvi.jpg"
+                    alt="Girvi Gold Loan Management"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    02 / FinTech
+                </div>
+
+
+                <h3>
+                    Girvi
+                </h3>
+
+
+                <div class="project-subtitle">
+                    Gold Loan & Jewellery Management Platform
+                </div>
+
+
+                <p class="project-description">
+
+                    Flutter application and Laravel backend with
+                    <strong>10K+ downloads</strong>,
+                    <strong>3,600+ active users</strong> and
+                    <strong>700+ annual subscribers</strong>.
+
+                    Implemented loan, interest, repayment,
+                    dues, jewellery and reporting workflows.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Flutter
+                    </span>
+
+                    <span class="tag">
+                        Laravel
+                    </span>
+
+                    <span class="tag">
+                        MySQL
+                    </span>
+
+                    <span class="tag">
+                        REST APIs
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.technicul.girvi"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Google Play ↗
+                    </a>
+
+
+                    <a
+                        href="https://apps.apple.com/in/app/girvi-%E0%A4%97%E0%A4%B0%E0%A4%B5-manage-gold-loan/id6651831215"
+                        target="_blank"
+                    >
+                        App Store ↗
+                    </a>
+
+
+                    <a
+                        href="https://technicul.com/portfolio/girvi-app"
+                        target="_blank"
+                    >
+                        Project Details ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             RAYS
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="rays.jpg"
+                    alt="Ray's International Pre-School"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    03 / Education
+                </div>
+
+
+                <h3>
+                    Ray's International Pre-School
+                </h3>
+
+
+                <div class="project-subtitle">
+                    School Management & RFID Attendance Platform
+                </div>
+
+
+                <p class="project-description">
+
+                    End-to-end school ecosystem with Flutter apps,
+                    Laravel CRM/admin panel, website and
+                    <strong>RFID-based IoT attendance</strong>.
+
+                    Covered students, branches, fees, staff,
+                    reports and parent-teacher communication.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Flutter
+                    </span>
+
+                    <span class="tag">
+                        Laravel
+                    </span>
+
+                    <span class="tag">
+                        AWS
+                    </span>
+
+                    <span class="tag">
+                        RFID / IoT
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://apps.apple.com/in/app/rays-international-pre-school/id6447643058"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        App Store ↗
+                    </a>
+
+
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.raysinternational.raysinternational"
+                        target="_blank"
+                    >
+                        Google Play ↗
+                    </a>
+
+
+                    <a
+                        href="https://raysinternational.in/"
+                        target="_blank"
+                    >
+                        Website ↗
+                    </a>
+
+
+                    <a
+                        href="https://technicul.com/portfolio/rays-international-pre-school"
+                        target="_blank"
+                    >
+                        Project Details ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             TAXIRA
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="taxira.jpg"
+                    alt="Taxira"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    04 / Mobility
+                </div>
+
+
+                <h3>
+                    Taxira
+                </h3>
+
+
+                <div class="project-subtitle">
+                    Transportation & Mobility Platform
+                </div>
+
+
+                <p class="project-description">
+
+                    Production mobile and backend solution
+                    supporting transportation workflows,
+                    location-based services and operational
+                    management.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Flutter
+                    </span>
+
+                    <span class="tag">
+                        Laravel
+                    </span>
+
+                    <span class="tag">
+                        Maps
+                    </span>
+
+                    <span class="tag">
+                        REST APIs
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://technicul.com/portfolio/taxira"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Project Details ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             MERA PHARMACY
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="mera_pharmacy.jpg"
+                    alt="Mera Pharmacy"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    05 / Healthcare
+                </div>
+
+
+                <h3>
+                    Mera Pharmacy
+                </h3>
+
+
+                <div class="project-subtitle">
+                    Pharmacy & Healthcare Platform
+                </div>
+
+
+                <p class="project-description">
+
+                    Digital pharmacy solution designed to support
+                    healthcare business workflows and provide
+                    a convenient mobile experience.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Flutter
+                    </span>
+
+                    <span class="tag">
+                        Laravel
+                    </span>
+
+                    <span class="tag">
+                        REST APIs
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://technicul.com/portfolio/mera-pharmacy"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Project Details ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             SERVICEWALA
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="servicewala.jpg"
+                    alt="Servicewala"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    06 / Services
+                </div>
+
+
+                <h3>
+                    Servicewala
+                </h3>
+
+
+                <div class="project-subtitle">
+                    Service Booking Platform
+                </div>
+
+
+                <p class="project-description">
+
+                    Service-booking application connecting
+                    customers and service operations through
+                    mobile workflows, backend APIs and booking
+                    management.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Flutter
+                    </span>
+
+                    <span class="tag">
+                        Laravel
+                    </span>
+
+                    <span class="tag">
+                        Firebase
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://technicul.com/portfolio/servicewala"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Project Details ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             JAY KUBER
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="jaykuber.jpg"
+                    alt="Jay Kuber Trading"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    07 / Business
+                </div>
+
+
+                <h3>
+                    Jay Kuber Trading
+                </h3>
+
+
+                <div class="project-subtitle">
+                    Business Management Platform
+                </div>
+
+
+                <p class="project-description">
+
+                    Business-focused application designed to
+                    digitize operational workflows, customer
+                    interactions and day-to-day management.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Flutter
+                    </span>
+
+                    <span class="tag">
+                        Laravel
+                    </span>
+
+                    <span class="tag">
+                        CRM
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://technicul.com/portfolio/jaykuber_trading"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Project Details ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             VIVAAH SUTRA
+        ================================== -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="vivaahsutra.webp"
+                    alt="Vivaah Sutra"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    08 / Matrimony
+                </div>
+
+
+                <h3>
+                    Vivaah Sutra
+                </h3>
+
+
+                <div class="project-subtitle">
+                    Matrimonial Platform
+                </div>
+
+
+                <p class="project-description">
+
+                    Matrimonial platform focused on profile
+                    management, discovery and user engagement
+                    across mobile and backend systems.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Flutter
+                    </span>
+
+                    <span class="tag">
+                        Laravel
+                    </span>
+
+                    <span class="tag">
+                        MySQL
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://technicul.com/portfolio/vivaahsutra"
+                        target="_blank"
+                        class="main-link"
+                    >
+                        Project Details ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-    <div class="container">
 
-        <div class="section-heading reveal">
-            <div class="eyebrow">Selected Projects</div>
-            <h2>Production products I've worked on.</h2>
+
+<!-- ========================================
+     RESUME CTA
+======================================== -->
+
+<section class="container">
+
+    <div class="resume-section">
+
+        <div>
+
+            <h2>
+                Want to know more about my experience?
+            </h2>
+
             <p>
-                A selection of mobile, backend and digital platforms developed
-                for real-world business use.
-            </p>
-        </div>
-
-        <div class="project-toolbar reveal">
-            <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
-            <button class="filter-btn" onclick="filterProjects('fintech',this)">FinTech</button>
-            <button class="filter-btn" onclick="filterProjects('finance',this)">Finance</button>
-            <button class="filter-btn" onclick="filterProjects('education',this)">Education</button>
-            <button class="filter-btn" onclick="filterProjects('business',this)">Business</button>
-            <button class="filter-btn" onclick="filterProjects('services',this)">Services</button>
-        </div>
-
-        <div class="projects-grid" id="projectGrid">
-
-            <!-- AABAPAY -->
-            <article class="project-card reveal" data-category="fintech">
-                <div class="project-image">
-                    <img src="aabapay.jpg" alt="AabaPay mobile application" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-type">FinTech • Payment</div>
-                    <h3>AabaPay</h3>
-                    <p>
-                        Digital payment and settlement platform supporting
-                        payment processing, automated bank transfers,
-                        beneficiary management and transaction workflows.
-                    </p>
-                    <div class="tech">
-                        <span>Flutter</span><span>Laravel</span><span>Razorpay</span>
-                        <span>RazorpayX</span><span>KYC APIs</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://technicul.com/portfolio/aabapay" target="_blank">Case Study ↗</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.aabapay.aabapay_app" target="_blank">Google Play ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- GIRVI -->
-            <article class="project-card reveal" data-category="finance">
-                <div class="project-image">
-                    <img src="girvi.jpg" alt="Girvi gold loan management application" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-type">Finance • Gold Loan</div>
-                    <h3>Girvi</h3>
-                    <p>
-                        Gold-loan and jewellery management platform with
-                        customer management, loan tracking, interest
-                        calculation, repayments, dues and reporting.
-                    </p>
-                    <div class="tech">
-                        <span>Flutter</span><span>Laravel</span><span>MySQL</span>
-                        <span>REST APIs</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://technicul.com/portfolio/girvi-app" target="_blank">Case Study ↗</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.technicul.girvi" target="_blank">Google Play ↗</a>
-                        <a href="https://apps.apple.com/in/app/girvi-%E0%A4%97%E0%A4%B0%E0%A4%B5-manage-gold-loan/id6651831215" target="_blank">App Store ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RAYS -->
-            <article class="project-card reveal" data-category="education">
-                <div class="project-image">
-                    <img src="rays.jpg" alt="Ray's International Pre-School application" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-type">Education • IoT</div>
-                    <h3>Ray's International Pre-School</h3>
-                    <p>
-                        End-to-end school management ecosystem combining
-                        Flutter applications, Laravel CRM, website and
-                        RFID-based attendance automation.
-                    </p>
-                    <div class="tech">
-                        <span>Flutter</span><span>Laravel</span><span>AWS</span>
-                        <span>RFID</span><span>IoT</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://technicul.com/portfolio/rays-international-pre-school" target="_blank">Case Study ↗</a>
-                        <a href="https://apps.apple.com/in/app/rays-international-pre-school/id6447643058" target="_blank">App Store ↗</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.raysinternational.raysinternational" target="_blank">Google Play ↗</a>
-                        <a href="https://raysinternational.in/" target="_blank">Website ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- TAXIRA -->
-            <article class="project-card reveal" data-category="services">
-                <div class="project-image">
-                    <img src="taxira.jpg" alt="Taxira packing and moving application" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-type">Services • Logistics</div>
-                    <h3>Taxira</h3>
-                    <p>
-                        Packing and moving platform with booking,
-                        service packages, location features and
-                        real-time operational workflows.
-                    </p>
-                    <div class="tech">
-                        <span>Flutter</span><span>Laravel</span><span>AWS</span>
-                        <span>Maps</span><span>Real-time</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://technicul.com/portfolio/taxira" target="_blank">Case Study ↗</a>
-                        <a href="https://taxira.in/" target="_blank">Website ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- MERA PHARMACY -->
-            <article class="project-card reveal" data-category="services">
-                <div class="project-image">
-                    <img src="mera_pharmacy.jpg" alt="Mera Pharmacy application" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-type">Healthcare • Marketplace</div>
-                    <h3>Mera Pharmacy</h3>
-                    <p>
-                        Medicine ordering platform connecting customers
-                        with nearby pharmacies through prescription,
-                        cart and order workflows.
-                    </p>
-                    <div class="tech">
-                        <span>Flutter</span><span>Laravel</span><span>MySQL</span>
-                        <span>REST APIs</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://technicul.com/portfolio/mera-pharmacy" target="_blank">Case Study ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- SERVICEWALA -->
-            <article class="project-card reveal" data-category="services">
-                <div class="project-image">
-                    <img src="servicewala.jpg" alt="Servicewala application" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-type">Services • Marketplace</div>
-                    <h3>Servicewala</h3>
-                    <p>
-                        Service marketplace connecting customers with
-                        professionals for home and office services.
-                    </p>
-                    <div class="tech">
-                        <span>Flutter</span><span>Laravel</span><span>Firebase</span>
-                        <span>REST APIs</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://technicul.com/portfolio/servicewala" target="_blank">Case Study ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- JAY KUBER -->
-            <article class="project-card reveal" data-category="business">
-                <div class="project-image">
-                    <img src="jaykuber.jpg" alt="Jay Kuber Trading application" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-type">Business • B2B Commerce</div>
-                    <h3>Jay Kuber Trading</h3>
-                    <p>
-                        B2B business application supporting orders,
-                        inventory, ledgers and Tally integration
-                        for distribution workflows.
-                    </p>
-                    <div class="tech">
-                        <span>Flutter</span><span>Laravel</span><span>Tally</span>
-                        <span>REST APIs</span><span>MySQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://technicul.com/portfolio/jaykuber_trading" target="_blank">Case Study ↗</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- VIVAAH SUTRA -->
-            <article class="project-card reveal" data-category="business">
-                <div class="project-image">
-                    <img src="vivaahsutra.webp" alt="Vivaah Sutra matrimony application" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-type">Matrimony • Platform</div>
-                    <h3>Vivaah Sutra</h3>
-                    <p>
-                        Matrimony platform with profiles, matchmaking,
-                        communication, subscriptions and administration.
-                    </p>
-                    <div class="tech">
-                        <span>Flutter</span><span>Laravel</span><span>Firebase</span>
-                        <span>AWS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://technicul.com/portfolio/vivaahsutra" target="_blank">Case Study ↗</a>
-                        <a href="https://vivaahsutra.com/" target="_blank">Website ↗</a>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-    <div class="container">
-
-        <div class="section-heading reveal">
-            <div class="eyebrow">Experience</div>
-            <h2>Engineering, leadership and delivery.</h2>
-        </div>
-
-        <div class="timeline">
-
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-role">Technical Team Lead</div>
-                <div class="timeline-company">Technicul Cloud LLP</div>
-                <div class="timeline-date">Apr 2025 – Present • Mumbai, India</div>
-
-                <ul>
-                    <li>Led a team of <strong>8 developers</strong> to design and deliver scalable cross-platform mobile applications using Flutter.</li>
-                    <li>Owned end-to-end project execution from requirements and technical planning through development, deployment and production support.</li>
-                    <li>Delivered <strong>80% of projects on time</strong> while maintaining quality standards and client satisfaction.</li>
-                    <li>Mentored developers, conducted code reviews and guided clean architecture and coding best practices.</li>
-                    <li>Collaborated with clients and stakeholders to translate business requirements into technical solutions.</li>
-                    <li>Managed application deployment and infrastructure on <strong>AWS EC2 and S3</strong>.</li>
-                </ul>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-role">Software Engineer (Flutter / Full Stack)</div>
-                <div class="timeline-company">Technicul Cloud LLP</div>
-                <div class="timeline-date">Aug 2021 – Mar 2025 • India</div>
-
-                <ul>
-                    <li>Designed, developed and maintained <strong>25+ cross-platform mobile applications</strong> using Flutter.</li>
-                    <li>Published <strong>20+ Android applications</strong> on Google Play Store and <strong>10+ iOS applications</strong> on Apple App Store.</li>
-                    <li>Developed REST API integrations and implemented authentication, Firebase notifications, payment gateways and real-time features.</li>
-                    <li>Applied Bloc / GetX state management and MVC / Clean Architecture for scalable Flutter applications.</li>
-                    <li>Designed and developed <strong>30+ CRM and backend systems</strong> using Laravel.</li>
-                    <li>Built <strong>10+ responsive websites</strong> using HTML, CSS, JavaScript and React.js.</li>
-                    <li>Worked on production applications serving <strong>250K+ users</strong> and handled AWS deployment and maintenance.</li>
-                    <li>Optimized application performance, responsiveness and stability across devices.</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-    <div class="container">
-
-        <div class="section-heading reveal">
-            <div class="eyebrow">Education</div>
-            <h2>Academic background.</h2>
-        </div>
-
-        <div class="education-grid">
-
-            <div class="education-card reveal">
-                <h3>B. R. Harne College of Engineering</h3>
-                <div class="degree">Bachelor of Engineering (B.E.) in Computer Engineering</div>
-                <p>Mumbai University • Graduated 2023 • Mumbai</p>
-            </div>
-
-            <div class="education-card reveal">
-                <h3>Pravin Patil College of Diploma Engineering & Technology</h3>
-                <div class="degree">Diploma in Computer Engineering</div>
-                <p>Mumbai University • Completed 2020</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-    <div class="container">
-
-        <div class="contact-box reveal">
-            <div class="eyebrow">Let's Connect</div>
-
-            <h2>Have a project or opportunity?</h2>
-
-            <p>
-                I'm open to discussing Flutter development,
-                technical leadership and exciting product opportunities.
+                View my complete professional experience,
+                achievements and technical skills.
             </p>
 
-            <div class="contact-actions">
-                <a href="mailto:nikhilkadam.work01@gmail.com" class="btn btn-primary">Email Me</a>
-                <a href="tel:+919594914849" class="btn btn-outline">Call Me</a>
-                <a href="https://www.linkedin.com/in/kadam-nikhil/" target="_blank" class="btn btn-outline">LinkedIn</a>
-                <a href="https://github.com/kadamnikhil" target="_blank" class="btn btn-outline">GitHub</a>
-            </div>
         </div>
 
+
+        <a
+            href="Nikhil_Kadam_Resume.pdf"
+            download
+            class="btn"
+        >
+            ↓ Download My Resume
+        </a>
+
     </div>
+
 </section>
+
 
 </main>
 
-<footer>
-    <div class="container footer-content">
-        <div>© 2026 Nikhil Kadam. All rights reserved.</div>
 
-        <div class="socials">
-            <a href="https://www.linkedin.com/in/kadam-nikhil/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/kadamnikhil" target="_blank">GitHub</a>
-            <a href="mailto:nikhilkadam.work01@gmail.com">Email</a>
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+            © 2026 Nikhil Kadam
         </div>
+
+
+        <div class="social-links">
+
+            <a
+                href="https://www.linkedin.com/in/kadam-nikhil/"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="https://github.com/kadamnikhil"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+            <a href="mailto:nikhilkadam.work01@gmail.com">
+                Email
+            </a>
+
+        </div>
+
     </div>
+
 </footer>
 
-<script>
-/* MOBILE MENU */
-function toggleMobileNav(){
-    const nav = document.getElementById("mobileNav");
-    nav.style.display = nav.style.display === "block" ? "none" : "block";
-}
-
-function closeMobileNav(){
-    document.getElementById("mobileNav").style.display = "none";
-}
-
-/* PROJECT FILTER */
-function filterProjects(category, button){
-    document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
-
-    document.querySelectorAll(".project-card").forEach(card => {
-        if(category === "all" || card.dataset.category === category){
-            card.style.display = "";
-        }else{
-            card.style.display = "none";
-        }
-    });
-}
-
-/* SCROLL REVEAL */
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-        }
-    });
-},{threshold:.08});
-
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-/* CLOSE MOBILE MENU ON OUTSIDE CLICK */
-document.addEventListener("click",(event)=>{
-    const nav = document.getElementById("mobileNav");
-    const menu = document.querySelector(".menu");
-
-    if(nav.style.display === "block" &&
-       !nav.contains(event.target) &&
-       !menu.contains(event.target)){
-        nav.style.display = "none";
-    }
-});
-</script>
 
 </body>
 </html>
