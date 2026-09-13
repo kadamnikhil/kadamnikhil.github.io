@@ -7,12 +7,33 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nikhil Kadam | Senior Software Developer</title>
+    <title>Nikhil Kadam | Software Developer</title>
 
     <meta
         name="description"
-        content="Nikhil Kadam - Senior Software Developer specializing in Flutter, Laravel and Full Stack development."
+        content="Nikhil Kadam - Software Developer specializing in Flutter, Laravel and Full Stack development. 40+ apps, 250K+ users."
     >
+
+    <meta name="author" content="Nikhil Kadam">
+    <meta property="og:title" content="Nikhil Kadam | Software Developer">
+    <meta property="og:description" content="Flutter and Laravel developer. 40+ apps shipped, 35+ published, 250K+ users.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nikhilkadam.dev">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nikhil Kadam | Software Developer">
+    <meta name="twitter:description" content="Flutter and Laravel developer. 40+ apps shipped, 250K+ users.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Inter,Arial' font-size='16' font-weight='800' fill='white'%3EN%3C/text%3E%3C/svg%3E">
+
+    <script>
+        document.documentElement.setAttribute("data-theme", "light");
+        try {
+            localStorage.removeItem("theme");
+        } catch (e) {}
+    </script>
 
     <style>
 
@@ -28,7 +49,7 @@
         }
 
         :root {
-            --background: #f7f8fa;
+            --background: #ffffff;
             --white: #ffffff;
             --text: #111827;
             --muted: #667085;
@@ -38,10 +59,48 @@
             --soft-blue: #eff6ff;
             --whatsapp: #25D366;
             --whatsapp-dark: #1da851;
+            --nav-bg: rgba(255, 255, 255, 0.96);
+            --tag-bg: #f3f4f6;
+            --tag-border: #eaecf0;
+            --tag-text: #475467;
+            --image-bg: #eef1f5;
+            --desc: #596273;
+            --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+            --cta-bg: #111827;
+            --cta-muted: #aeb7c5;
+            --invert: #111827;
+            --invert-text: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --background: #0b1220;
+            --white: #121a2b;
+            --text: #f3f4f6;
+            --muted: #9aa3b5;
+            --border: #243049;
+            --primary: #60a5fa;
+            --primary-dark: #3b82f6;
+            --soft-blue: #15233d;
+            --nav-bg: rgba(11, 18, 32, 0.92);
+            --tag-bg: #1a2438;
+            --tag-border: #2a3754;
+            --tag-text: #c5d0e0;
+            --image-bg: #1a2438;
+            --desc: #b4bccb;
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            --cta-bg: #1d4ed8;
+            --cta-muted: #dbeafe;
+            --invert: #f3f4f6;
+            --invert-text: #0b1220;
         }
 
         html {
             scroll-behavior: smooth;
+            color-scheme: light;
+        }
+
+        [data-theme="dark"] {
+            color-scheme: dark;
         }
 
         body {
@@ -84,7 +143,7 @@
             top: 0;
             z-index: 1000;
 
-            background: rgba(247, 248, 250, 0.94);
+            background: var(--nav-bg);
             backdrop-filter: blur(14px);
 
             border-bottom: 1px solid var(--border);
@@ -134,8 +193,8 @@
 
             padding: 10px 15px;
 
-            background: var(--text);
-            color: white;
+            background: var(--invert);
+            color: var(--invert-text);
 
             border-radius: 9px;
 
@@ -228,7 +287,9 @@
 
             border: 1px solid var(--border);
 
-            background: white;
+            background: var(--white);
+
+            color: var(--text);
 
             font-size: 13px;
             font-weight: 750;
@@ -314,14 +375,15 @@
 
             border-color: #d5dae3;
 
-            box-shadow:
-                0 20px 50px rgba(15, 23, 42, 0.08);
+            box-shadow: var(--shadow);
         }
 
         .project-image {
+            position: relative;
+
             height: 260px;
 
-            background: #eef1f5;
+            background: var(--image-bg);
 
             overflow: hidden;
         }
@@ -378,7 +440,7 @@
         .project-description {
             margin-top: 14px;
 
-            color: #596273;
+            color: var(--desc);
 
             font-size: 13px;
 
@@ -400,11 +462,11 @@
 
             border-radius: 7px;
 
-            background: #f3f4f6;
+            background: var(--tag-bg);
 
-            border: 1px solid #eaecf0;
+            border: 1px solid var(--tag-border);
 
-            color: #475467;
+            color: var(--tag-text);
 
             font-size: 10px;
 
@@ -449,11 +511,11 @@
         }
 
         .project-links .main-link {
-            background: var(--text);
+            background: var(--invert);
 
-            color: white;
+            color: var(--invert-text);
 
-            border-color: var(--text);
+            border-color: var(--invert);
         }
 
         .project-links .main-link:hover {
@@ -476,7 +538,7 @@
 
             border-radius: 24px;
 
-            background: var(--text);
+            background: var(--cta-bg);
 
             color: white;
 
@@ -500,7 +562,7 @@
         .resume-section p {
             margin-top: 7px;
 
-            color: #aeb7c5;
+            color: var(--cta-muted);
 
             font-size: 13px;
         }
@@ -510,7 +572,7 @@
 
             background: white;
 
-            color: var(--text);
+            color: #111827;
 
             border-color: white;
         }
@@ -593,10 +655,403 @@
             transition: 0.2s;
         }
 
-        .whatsapp-float:hover .whatsapp-tooltip {
+            .whatsapp-float:hover .whatsapp-tooltip {
             opacity: 1;
 
             transform: translateX(0);
+        }
+
+
+        /* ========================================
+           NAV ACTIONS / THEME / MENU
+        ======================================== */
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--text);
+            border-radius: 10px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .icon-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .icon-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .theme-btn .icon-sun,
+        [data-theme="dark"] .theme-btn .icon-moon {
+            display: none;
+        }
+
+        [data-theme="dark"] .theme-btn .icon-sun {
+            display: block;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+        .section-title {
+            margin-top: 8px;
+            font-size: 32px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .section-intro {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 520px;
+        }
+
+
+        /* ========================================
+           STATS
+        ======================================== */
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 0 auto 80px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 22px 16px;
+            text-align: center;
+        }
+
+        .stat-card strong {
+            display: block;
+            font-size: 26px;
+            letter-spacing: -0.8px;
+        }
+
+        .stat-card span {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        /* ========================================
+           ABOUT / SKILLS
+        ======================================== */
+
+        .page-section {
+            padding-bottom: 80px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .about-card,
+        .skills-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 28px;
+        }
+
+        .about-card p {
+            margin-top: 14px;
+            color: var(--desc);
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+
+        /* ========================================
+           FILTERS / FEATURED
+        ======================================== */
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 0 24px;
+        }
+
+        .filter-btn {
+            min-height: 36px;
+            padding: 0 14px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--text);
+            color: var(--background);
+            border-color: var(--text);
+        }
+
+        .project-card.is-hidden {
+            display: none;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 2;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: var(--primary);
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .project-card.featured {
+            border-color: #bfdbfe;
+        }
+
+        [data-theme="dark"] .project-card.featured {
+            border-color: #1d4ed8;
+        }
+
+
+        /* ========================================
+           EXPERIENCE
+        ======================================== */
+
+        .timeline {
+            margin-top: 28px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .timeline-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px 26px;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 20px;
+        }
+
+        .timeline-meta {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .timeline-item h3 {
+            font-size: 18px;
+            letter-spacing: -0.4px;
+        }
+
+        .timeline-item h4 {
+            margin-top: 4px;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .timeline-item p {
+            margin-top: 10px;
+            color: var(--desc);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* ========================================
+           CONTACT
+        ======================================== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .contact-card {
+            display: block;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px;
+            transition: 0.2s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .contact-card span {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-card strong {
+            display: block;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        .contact-card p {
+            margin-top: 6px;
+            color: var(--desc);
+            font-size: 13px;
+        }
+
+
+        /* ========================================
+           SIMPLE ANIMATIONS
+        ======================================== */
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes whatsapp-pulse {
+            0%,
+            100% {
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+            }
+            50% {
+                box-shadow:
+                    0 8px 25px rgba(37, 211, 102, 0.5),
+                    0 0 0 10px rgba(37, 211, 102, 0.12);
+            }
+        }
+
+        .hero-badge,
+        .hero h1,
+        .hero-description,
+        .hero-buttons {
+            animation: fade-up 0.65s ease both;
+        }
+
+        .hero h1 {
+            animation-delay: 0.08s;
+        }
+
+        .hero-description {
+            animation-delay: 0.16s;
+        }
+
+        .hero-buttons {
+            animation-delay: 0.24s;
+        }
+
+        .js-anim .project-card,
+        .js-anim .section-header,
+        .js-anim .resume-section,
+        .js-anim .stat-card,
+        .js-anim .about-card,
+        .js-anim .skills-card,
+        .js-anim .timeline-item,
+        .js-anim .contact-card {
+            transition:
+                opacity 0.5s ease,
+                transform 0.5s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .js-anim .project-card:not(.is-visible),
+        .js-anim .section-header:not(.is-visible),
+        .js-anim .resume-section:not(.is-visible),
+        .js-anim .stat-card:not(.is-visible),
+        .js-anim .about-card:not(.is-visible),
+        .js-anim .skills-card:not(.is-visible),
+        .js-anim .timeline-item:not(.is-visible),
+        .js-anim .contact-card:not(.is-visible) {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .whatsapp-float {
+            animation: whatsapp-pulse 2.4s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-badge,
+            .hero h1,
+            .hero-description,
+            .hero-buttons,
+            .whatsapp-float {
+                animation: none;
+            }
+
+            .js-anim .project-card,
+            .js-anim .section-header,
+            .js-anim .resume-section,
+            .js-anim .stat-card,
+            .js-anim .about-card,
+            .js-anim .skills-card,
+            .js-anim .timeline-item,
+            .js-anim .contact-card {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
         }
 
 
@@ -641,8 +1096,15 @@
 
         @media (max-width: 950px) {
 
-            .projects-grid {
+            .projects-grid,
+            .stats-grid,
+            .contact-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .timeline-item {
+                grid-template-columns: 1fr;
             }
 
         }
@@ -664,6 +1126,45 @@
 
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 64px;
+                left: 14px;
+                right: 14px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+                padding: 12px;
+                background: var(--white);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px 12px;
+                border-radius: 10px;
+            }
+
+            .menu-btn {
+                display: inline-flex;
+            }
+
+            .about-grid,
+            .contact-grid,
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-title {
+                font-size: 26px;
             }
 
             .hero {
@@ -767,6 +1268,10 @@
 
     </style>
 
+    <script>
+        document.documentElement.classList.add("js-anim");
+    </script>
+
 </head>
 
 
@@ -788,12 +1293,11 @@
             </a>
 
 
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
 
-                <a href="#projects">
-                    Projects
-                </a>
-
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
                 <a
                     href="https://www.linkedin.com/in/kadam-nikhil/"
                     target="_blank"
@@ -805,13 +1309,29 @@
             </div>
 
 
-            <a
-                href="Nikhil_Kadam_Resume.pdf"
-                download
-                class="resume-btn"
-            >
-                ↓ Download Resume
-            </a>
+            <div class="nav-actions">
+
+                <a
+                    href="Nikhil_Kadam_Resume.pdf"
+                    download
+                    class="resume-btn"
+                >
+                    ↓ Resume
+                </a>
+
+                <button
+                    class="icon-btn menu-btn"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="nav-links"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 7h16M4 12h16M4 17h16"></path>
+                    </svg>
+                </button>
+
+            </div>
 
         </nav>
 
@@ -831,7 +1351,7 @@
 <section class="hero container">
 
     <span class="hero-badge">
-        Senior Software Developer
+        Software Developer
     </span>
 
 
@@ -846,11 +1366,52 @@
 
 
     <p class="hero-description">
+        Flutter Developer with 5+ years of experience building production-ready mobile applications. Developed 40+ apps, with 35+ published on Android/iOS, serving 250K+ users. Skilled in Flutter, Dart, REST APIs, Firebase, Bloc/GetX, payments, WebSockets, Laravel, AWS, and end-to-end delivery.
+    </p>
 
-Flutter Developer with 5+ years of experience building production-ready mobile applications. Developed 25+ apps, with 30+ published on Android/iOS, serving 250K+ users. Skilled in Flutter, Dart, REST APIs, Firebase, Bloc/GetX, payments, WebSockets, Laravel, AWS, and end-to-end delivery.
- 
+    <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn">Contact Me</a>
+        <a
+            href="https://wa.me/919594914849?text=Hi%20Nikhil"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+        >
+            WhatsApp
+        </a>
+    </div>
+
 </section>
 
+
+<!-- ========================================
+     STATS
+======================================== -->
+
+<section class="container stats-grid" aria-label="Highlights">
+
+    <div class="stat-card">
+        <strong>5+</strong>
+        <span>Years experience</span>
+    </div>
+
+    <div class="stat-card">
+        <strong>40+</strong>
+        <span>Apps developed</span>
+    </div>
+
+    <div class="stat-card">
+        <strong>35+</strong>
+        <span>Published on stores</span>
+    </div>
+
+    <div class="stat-card">
+        <strong>250K+</strong>
+        <span>Users served</span>
+    </div>
+
+</section>
 
 
 <!-- ========================================
@@ -862,19 +1423,8 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
     class="container projects-section"
 >
 
-
-    <div class="section-header">
-
-        <div>
-
-            <span class="section-label">
-                Selected Projects
-            </span>
-
-        </div>
-
-    </div>
-
+ 
+<br><br>
 
 
     <div class="projects-grid">
@@ -884,9 +1434,11 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              01 AABAPAY
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card featured" data-filter="flutter laravel fintech">
 
             <div class="project-image">
+
+                <span class="featured-badge">Featured</span>
 
                 <img
                     src="aabapay.jpg"
@@ -961,9 +1513,11 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              02 GIRVI
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card featured" data-filter="flutter laravel fintech">
 
             <div class="project-image">
+
+                <span class="featured-badge">Featured</span>
 
                 <img
                     src="girvi.jpg"
@@ -1044,7 +1598,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              03 RAYS
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel education">
 
             <div class="project-image">
 
@@ -1124,7 +1678,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              04 TAXIRA
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel mobility">
 
             <div class="project-image">
 
@@ -1189,7 +1743,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              06 SERVICEWALA
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel">
 
             <div class="project-image">
 
@@ -1270,7 +1824,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              07 JAY KUBER
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel">
 
             <div class="project-image">
 
@@ -1341,7 +1895,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              08 VIVAAH SUTRA
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel">
 
             <div class="project-image">
 
@@ -1412,7 +1966,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              09 ARU CABS
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="laravel mobility">
 
             <div class="project-image">
 
@@ -1493,7 +2047,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              10 AQARI 53
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel">
 
             <div class="project-image">
 
@@ -1573,7 +2127,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              11 SHIPEX MOVING
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel">
 
             <div class="project-image">
 
@@ -1653,7 +2207,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              12 CHAVAN FISH AGRO
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel">
 
             <div class="project-image">
 
@@ -1734,7 +2288,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              13 MANGROVE PARKS
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel">
 
             <div class="project-image">
 
@@ -1807,7 +2361,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              14 TURFWALA
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="flutter laravel">
 
             <div class="project-image">
 
@@ -1872,7 +2426,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              15 ARCHER CHESS ACADEMY
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="laravel education">
 
             <div class="project-image">
 
@@ -1939,7 +2493,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              16 SEA & BEYOND
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="laravel">
 
             <div class="project-image">
 
@@ -2006,7 +2560,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              17 ETERNAL WEDDINGZ
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="laravel">
 
             <div class="project-image">
 
@@ -2073,7 +2627,7 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
              18 ERO POWER
         ================================== -->
 
-        <article class="project-card">
+        <article class="project-card" data-filter="laravel">
 
             <div class="project-image">
 
@@ -2138,6 +2692,116 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
 
 </section>
 
+
+
+<!-- ========================================
+     EXPERIENCE
+======================================== -->
+
+<section id="experience" class="container page-section">
+
+    <div class="section-header">
+        <div>
+            <span class="section-label">Experience</span>
+            <h2 class="section-title">Where I work</h2>
+        </div>
+    </div>
+
+    <div class="timeline">
+
+        <article class="timeline-item">
+            <div class="timeline-meta">
+                Apr 2025 — Present
+            </div>
+            <div>
+                <h3>Technical Team Lead</h3>
+                <h4>Technicul Cloud LLP · Mumbai</h4>
+                <p>
+                    Leading engineering delivery for Flutter and Laravel products. Own end-to-end builds, reviews, and store releases across FinTech, mobility, education, and marketplace apps.
+                </p>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-meta">
+                Aug 2021 — Present
+            </div>
+            <div>
+                <h3>Software Engineer</h3>
+                <h4>Technicul Cloud LLP · India</h4>
+                <p>
+                    Built and shipped 40+ production apps with REST APIs, Firebase, payments, KYC, maps, and AWS. Published 35+ titles on Google Play and the App Store, used by 250K+ people.
+                </p>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-meta">
+                Education
+            </div>
+            <div>
+                <h3>B.Tech, Computer Engineering</h3>
+                <h4>Bachelor of Technology</h4>
+                <p>
+                    Computer engineering background with a focus on building and shipping software used in production.
+                </p>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     CONTACT
+======================================== -->
+
+<section id="contact" class="container page-section">
+
+    <div class="section-header">
+        <div>
+            <span class="section-label">Contact</span>
+            <h2 class="section-title">Let's work together</h2>
+            <p class="section-intro">
+                Open to freelance work, full-time roles, and product builds.
+            </p>
+        </div>
+    </div>
+
+    <div class="contact-grid">
+
+        <a class="contact-card" href="mailto:nikhilkadam.work01@gmail.com">
+            <span>Email</span>
+            <strong>nikhilkadam.work01@gmail.com</strong>
+            <p>Best for project briefs and opportunities.</p>
+        </a>
+
+        <a
+            class="contact-card"
+            href="https://wa.me/919594914849?text=Hi%20Nikhil"
+            target="_blank"
+            rel="noopener"
+        >
+            <span>WhatsApp</span>
+            <strong>+91 95949 14849</strong>
+            <p>Quick chat about an app or website.</p>
+        </a>
+
+        <a
+            class="contact-card"
+            href="https://www.linkedin.com/in/kadam-nikhil/"
+            target="_blank"
+            rel="noopener"
+        >
+            <span>LinkedIn</span>
+            <strong>kadam-nikhil</strong>
+            <p>Connect or view the full profile.</p>
+        </a>
+
+    </div>
+
+</section>
 
 
 <!-- ========================================
@@ -2255,6 +2919,63 @@ Flutter Developer with 5+ years of experience building production-ready mobile a
     </svg>
 
 </a>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var menuBtn = document.querySelector(".menu-btn");
+        var navLinks = document.getElementById("nav-links");
+
+        if (menuBtn && navLinks) {
+            menuBtn.addEventListener("click", function () {
+                var open = navLinks.classList.toggle("open");
+                menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+                menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+            });
+
+            navLinks.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    navLinks.classList.remove("open");
+                    menuBtn.setAttribute("aria-expanded", "false");
+                    menuBtn.setAttribute("aria-label", "Open menu");
+                });
+            });
+        }
+
+        var items = document.querySelectorAll(
+            ".section-header, .project-card, .resume-section, .stat-card, .timeline-item, .contact-card"
+        );
+
+        if (!("IntersectionObserver" in window)) {
+            items.forEach(function (el) {
+                el.classList.add("is-visible");
+            });
+            return;
+        }
+
+        var observer = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -32px 0px"
+            }
+        );
+
+        items.forEach(function (el, index) {
+            el.style.transitionDelay = (index % 3) * 0.08 + "s";
+            observer.observe(el);
+        });
+    });
+</script>
 
 
 </body>
