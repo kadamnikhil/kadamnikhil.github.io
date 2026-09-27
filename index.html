@@ -1564,17 +1564,52 @@
             }
 
             .hero {
-                min-height: auto;
-                padding: 96px 0 110px;
+                min-height: 100svh;
+                padding: 92px 0 40px;
                 text-align: center;
+                align-items: flex-start;
             }
 
             .hero-video {
-                display: none;
+                display: block;
+                opacity: 0.88;
+                object-position: 42% center;
+                transform: none;
+                animation: none;
+            }
+
+            .hero-shade {
+                background:
+                    linear-gradient(180deg, rgba(7, 11, 22, 0.5) 0%, rgba(7, 11, 22, 0.22) 36%, rgba(7, 11, 22, 0.48) 100%);
+            }
+
+            .hero-grid {
+                opacity: 0.35;
+            }
+
+            .orb {
+                opacity: 0.18;
+                filter: blur(28px);
+            }
+
+            .orb-a,
+            .orb-b,
+            .orb-c {
+                width: 160px;
+                height: 160px;
             }
 
             .stats-grid {
                 margin-top: 28px;
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 16px 10px;
+            }
+
+            .stat-card strong {
+                font-size: 22px;
             }
 
             .hero h1 {
@@ -2117,6 +2152,72 @@
 
 
         <!-- =================================
+             14 TURFWALA
+        ================================== -->
+
+        <article class="project-card" data-filter="flutter laravel">
+
+            <div class="project-image">
+
+                <img
+                    src="turf.png"
+                    alt="TurfWala"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">
+                      Sports
+                </div>
+
+                <h3>
+                    TurfWala
+                </h3>
+
+                <div class="project-subtitle">
+                    Turf Booking & Operations Platform
+                </div>
+
+                <p class="project-description">
+
+                    Turf booking and operations platform for
+                    players, turf owners and admin teams with
+                    slot management, bookings, game tracking,
+                    OTP login and support workflows.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Booking</span>
+                    <span class="tag">OTP</span>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.turfwala.turfaround&hl=en_IN"
+                        class="main-link"
+                    >
+                        Play Store
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+ 
+
+        <!-- =================================
              03 RAYS
         ================================== -->
 
@@ -2193,6 +2294,7 @@
             </div>
 
         </article>
+
 
 
 
@@ -2799,337 +2901,7 @@
         </article>
 
 
-
-        <!-- =================================
-             14 TURFWALA
-        ================================== -->
-
-        <article class="project-card" data-filter="flutter laravel">
-
-            <div class="project-image">
-
-                <img
-                    src="turf.png"
-                    alt="TurfWala"
-                    loading="lazy"
-                >
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                      Sports
-                </div>
-
-                <h3>
-                    TurfWala
-                </h3>
-
-                <div class="project-subtitle">
-                    Turf Booking & Operations Platform
-                </div>
-
-                <p class="project-description">
-
-                    Turf booking and operations platform for
-                    players, turf owners and admin teams with
-                    slot management, bookings, game tracking,
-                    OTP login and support workflows.
-
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">Flutter</span>
-                    <span class="tag">Laravel</span>
-                    <span class="tag">Booking</span>
-                    <span class="tag">OTP</span>
-
-                </div>
-
-                <div class="project-links">
-
-                    <a
-                        href="https://play.google.com/store/apps/details?id=com.turfwala.turfaround&hl=en_IN"
-                        class="main-link"
-                    >
-                        Play Store
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================
-             15 ARCHER CHESS ACADEMY
-        ================================== -->
-
-        <article class="project-card" data-filter="laravel education">
-
-            <div class="project-image">
-
-                <img
-                    src="archer_kids.webp"
-                    alt="Archer Chess Academy"
-                    loading="lazy"
-                >
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                      Education
-                </div>
-
-                <h3>
-                    Archer Chess Academy
-                </h3>
-
-                <div class="project-subtitle">
-                    Chess Learning & Student Management
-                </div>
-
-                <p class="project-description">
-
-                    Comprehensive education platform with a
-                    dynamic website, Super Admin Panel, Tutor
-                    Dashboard and Student Dashboard for managing
-                    students, lessons and academic progress.
-
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">Laravel</span>
-                    <span class="tag">PHP</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">Admin Panel</span>
-                    <span class="tag">Education</span>
-
-                </div>
-
-                <div class="project-links">
-
-                    <a
-                        href="https://archerchessacademy.com/"
-                        target="_blank"
-                        class="main-link"
-                    >
-                        Website ↗
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================
-             16 SEA & BEYOND
-        ================================== -->
-
-        <article class="project-card" data-filter="laravel">
-
-            <div class="project-image">
-
-                <img
-                    src="sea_and_beyond.webp"
-                    alt="Sea and Beyond"
-                    loading="lazy"
-                >
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                      Maritime
-                </div>
-
-                <h3>
-                    Sea & Beyond
-                </h3>
-
-                <div class="project-subtitle">
-                    Maritime Career & Community Platform
-                </div>
-
-                <p class="project-description">
-
-                    Web platform and admin panel supporting a
-                    community of <strong>80K+ mariners</strong>.
-                    Provides job opportunities, university
-                    admissions, mentor connections and events.
-
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">Laravel</span>
-                    <span class="tag">PHP</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">AWS</span>
-                    <span class="tag">Admin Panel</span>
-
-                </div>
-
-                <div class="project-links">
-
-                    <a
-                        href="https://seaandbeyond.com/"
-                        target="_blank"
-                        class="main-link"
-                    >
-                        Website ↗
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================
-             17 ETERNAL WEDDINGZ
-        ================================== -->
-
-        <article class="project-card" data-filter="laravel">
-
-            <div class="project-image">
-
-                <img
-                    src="eternal.webp"
-                    alt="Eternal Weddingz"
-                    loading="lazy"
-                >
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                     Wedding
-                </div>
-
-                <h3>
-                    Eternal Weddingz
-                </h3>
-
-                <div class="project-subtitle">
-                    Wedding Vendor & Venue Marketplace
-                </div>
-
-                <p class="project-description">
-
-                    Dynamic wedding marketplace and admin panel
-                    connecting users with banquet halls, lawns,
-                    resorts, photographers, decorators, caterers,
-                    planners and makeup artists.
-
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">Laravel</span>
-                    <span class="tag">PHP</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">AWS</span>
-                    <span class="tag">Admin Panel</span>
-
-                </div>
-
-                <div class="project-links">
-
-                    <a
-                        href="https://www.eternalweddingz.in/"
-                        target="_blank"
-                        class="main-link"
-                    >
-                        Website ↗
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================
-             18 ERO POWER
-        ================================== -->
-
-        <article class="project-card" data-filter="laravel">
-
-            <div class="project-image">
-
-                <img
-                    src="eropower.webp"
-                    alt="ERO Power"
-                    loading="lazy"
-                >
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                    Power
-                </div>
-
-                <h3>
-                    ERO Power
-                </h3>
-
-                <div class="project-subtitle">
-                    Letter Management System
-                </div>
-
-                <p class="project-description">
-
-                    Customized Letter Management System designed
-                    to streamline the creation, processing,
-                    tracking and management of official
-                    correspondence.
-
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">Laravel</span>
-                    <span class="tag">PHP</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">AWS</span>
-                    <span class="tag">Admin Panel</span>
-
-                </div>
-
-                <div class="project-links">
-
-                    <a
-                        href="https://www.eropower.in/"
-                        target="_blank"
-                        class="main-link"
-                    >
-                        Website ↗
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
+  
 
     </div>
 
